@@ -4,7 +4,6 @@ import playTriangle from '../../../../assets/images/png/playTriangle.png'
 import plus from '../../../../assets/images/png/plus.png'
 import { SubTitle } from '../../../subTitle/subTitle'
 import { StyledPageContainer, Title } from './pageContainer.styled'
-
 export const PageContainer = ({ filmData }) => {
 	return (
 		<StyledPageContainer>

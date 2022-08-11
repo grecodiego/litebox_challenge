@@ -6,9 +6,9 @@ export const StyledButton = styled.div`
 	align-items: center;
 	height: 56px;
 	margin: 0 17% 5% 17%;
-	color: white;
+	color: ${({ theme }) => theme.secondaryColor};
 
-	background-color: #242424;
+	background-color: ${({ theme }) => theme.backgroundColor};
 	${(props) =>
 		props.border === true
 			? ' border: 1px solid rgba(255, 255, 255, 0.5);'

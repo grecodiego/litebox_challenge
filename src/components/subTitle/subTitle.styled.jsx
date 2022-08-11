@@ -5,6 +5,7 @@ export const StyledSubTitle = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: row;
+	width: auto;
 `
 export const originDefault = css`
 	color: ${({ theme }) => theme.secondaryColor};
@@ -19,11 +20,9 @@ export const FirstPartOriginTitle = styled.h3`
 	${originDefault}
 `
 export const SecondPartOriginTitle = styled.h3`
+	display: flex;
+	width: auto;
 	font-family: 'Regular';
 	font-size: ${({ size }) => size}px;
 	${originDefault}
-`
-export const ImageIcon = styled.img`
-	display: flex;
-	height: fit-content;
 `

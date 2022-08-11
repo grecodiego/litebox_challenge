@@ -18,7 +18,7 @@ body {
 		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
 		sans-serif;
 	background-repeat: no-repeat;
-	background-color: #242424;
+	background-color: ${({ theme }) => theme.backgroundColor};
 }
 @font-face {
 	font-family: 'Regular';

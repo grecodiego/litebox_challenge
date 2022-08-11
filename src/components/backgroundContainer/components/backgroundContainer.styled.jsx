@@ -42,7 +42,7 @@ export const BackgroundAnimation = styled.div`
 
 	@keyframes pulses {
 		0% {
-			background-color: #242424;
+			background-color: ${({ theme }) => theme.backgroundColor};
 		}
 		100% {
 			background-color: transparent;
@@ -55,5 +55,9 @@ export const GradientBackground = styled.div`
 	margin-bottom: -1%;
 	width: 100%;
 	height: 200px;
-	background: linear-gradient(180deg, rgba(36, 36, 36, 0) 0%, #242424 100%);
+	background: linear-gradient(
+		180deg,
+		rgba(36, 36, 36, 0) 0%,
+		${({ theme }) => theme.backgroundColor} 100%
+	);
 `

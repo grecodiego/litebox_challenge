@@ -4,6 +4,17 @@ export const StyledFilmBox = styled.div`
 	display: flex;
 	width: 100%;
 	padding-bottom: 7%;
+	border-radius: 4px;
+	animation: pulse2 ${({ index }) => (index + 1) * 1.5}s;
+	animation-timing-function: ease-in-out;
+	@keyframes pulse2 {
+		0% {
+			margin-left: 100%;
+		}
+		100% {
+			margin-left: 0%;
+		}
+	}
 `
 
 export const BoxContent = styled.div`
