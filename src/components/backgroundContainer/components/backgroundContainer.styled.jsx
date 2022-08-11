@@ -2,44 +2,46 @@ import styled from 'styled-components'
 
 export const StyledBackgroundContainer = styled.div`
 	display: flex;
+	height: 585px;
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+`
+export const ImageContainer = styled.div`
+	display: flex;
 	align-items: flex-end;
 	height: 585px;
 	width: 100%;
 	justify-content: center;
 	background-position: center;
 	background-size: cover;
-	animation: pulse 3s;
+	animation: down-image;
+	animation-duration: 2s;
 	animation-timing-function: ease-out;
 	animation-fill-mode: forwards;
-
+	@keyframes down-image {
+		0% {
+			margin-top: -100%;
+		}
+		100% {
+			margin-top: -5%;
+		}
+	}
 	${(props) =>
 		`
 			background-image: url(${props.backgroundImage});
 		`}
-	@keyframes pulse {
-		0% {
-			top: -50%;
-		}
-		100% {
-			top: -5%;
-		}
-	}
 `
 
 export const BackgroundAnimation = styled.div`
-	position: fixed;
-	height: 168vw;
+	display: flex;
+	height: 585px;
 	width: auto;
-	top: 0%;
-	left: 0;
-	bottom: 0;
-	right: 0;
 	background-position: center;
 	background-size: cover;
-	animation: pulses 5s;
+	animation: pulses 7s;
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: forwards;
-
 	@keyframes pulses {
 		0% {
 			background-color: ${({ theme }) => theme.backgroundColor};
