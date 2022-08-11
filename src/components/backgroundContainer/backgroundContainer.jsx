@@ -13,8 +13,8 @@ export const BackgroundContainer = ({ filmImage }) => {
 				<ImageContainer backgroundImage={backgroundImage}>
 					<GradientBackground />
 				</ImageContainer>
-				<BackgroundAnimation />
 			</StyledBackgroundContainer>
+			<BackgroundAnimation />
 		</>
 	)
 }

@@ -16,7 +16,7 @@ export const ImageContainer = styled.div`
 	background-position: center;
 	background-size: cover;
 	animation: down-image;
-	animation-duration: 2s;
+	animation-duration: 4s;
 	animation-timing-function: ease-out;
 	animation-fill-mode: forwards;
 	@keyframes down-image {
@@ -35,11 +35,14 @@ export const ImageContainer = styled.div`
 
 export const BackgroundAnimation = styled.div`
 	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0%;
 	height: 585px;
-	width: auto;
+	width: 100%;
 	background-position: center;
 	background-size: cover;
-	animation: pulses 7s;
+	animation: pulses 5s;
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: forwards;
 	@keyframes pulses {
