@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer'
 
 export const VideosList = () => {
 	const [filmsData, setFilmsData] = useState(null)
-	const { ref, inView } = useInView({ threshold: 0 })
+	const { ref, inView } = useInView({ threshold: 0, triggerOnce: true })
 	const [dropDownChoice, setDropDownChoice] = useState({
 		id: 1,
 		title: 'POPULARES',
