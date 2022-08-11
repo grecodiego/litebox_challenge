@@ -1,14 +1,11 @@
 import React, { Fragment } from 'react'
 import { NavBar } from '../navBar/navBar'
-import { PageContainer } from './components/PageContainer/pageContainer'
-import { BackgroundContainer } from '../backgroundContainer/backgroundContainer'
 
-export const Page = ({ filmData }) => {
+export const Page = ({ children }) => {
 	return (
 		<Fragment>
-			<BackgroundContainer filmImage={filmData.backdrop_path} />
 			<NavBar />
-			<PageContainer filmData={filmData}></PageContainer>
+			<main>{children}</main>
 		</Fragment>
 	)
 }

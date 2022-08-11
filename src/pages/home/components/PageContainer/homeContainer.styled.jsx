@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledPageContainer = styled.div`
+export const StyledHomeContainer = styled.div`
 	display: flex;
 	position: relative;
 	margin-top: -40%;
