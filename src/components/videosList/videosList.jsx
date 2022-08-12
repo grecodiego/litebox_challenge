@@ -8,10 +8,9 @@ import { useInView } from 'react-intersection-observer'
 export const VideosList = () => {
 	const [filmsData, setFilmsData] = useState(null)
 	const { ref, inView } = useInView({ threshold: 0, triggerOnce: true })
-	const [dropDownChoice, setDropDownChoice] = useState({
+	const [dropDownOptionChoosen, setDropDownOptionChoosen] = useState({
 		id: 1,
 		title: 'POPULARES',
-		selected: true,
 	})
 
 	useEffect(() => {
@@ -19,15 +18,15 @@ export const VideosList = () => {
 	}, [])
 
 	let filtersOptions = [
-		{ id: 1, title: 'POPULARES', selected: true },
-		{ id: 2, title: 'MIS PELICULAS', selected: false },
+		{ id: 1, title: 'POPULARES' },
+		{ id: 2, title: 'MIS PELICULAS' },
 	]
 	if (filmsData !== null) {
 		return (
 			<StyledVideoList>
 				<Filter
-					dropDownChoice={dropDownChoice}
-					setDropDownChoice={setDropDownChoice}
+					dropDownOptionChoosen={dropDownOptionChoosen}
+					setDropDownOptionChoosen={setDropDownOptionChoosen}
 					filtersOptions={filtersOptions}
 				/>
 

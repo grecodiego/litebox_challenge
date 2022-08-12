@@ -14,9 +14,7 @@ body {
 	height: auto;
 	width: auto;
 	overflow-x: hidden;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-		sans-serif;
+	overflow-y: scroll;
 	background-repeat: no-repeat;
 	background-color: ${({ theme }) => theme.backgroundColor};
 }
@@ -31,7 +29,10 @@ body {
 		url(${Light}) format('truetype');
 }
 @media only screen and (min-device-width: 480px) {
+	::-webkit-scrollbar {
+    display: none;}
 }
 @media only screen and (min-device-width: 768px) {
 }
+
 `

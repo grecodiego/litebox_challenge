@@ -13,14 +13,14 @@ import React, { useState } from 'react'
 import checked from '../../../../assets/images/png/checked.png'
 
 export const Filter = ({
-	dropDownChoice,
+	dropDownOptionChoosen,
 	filtersOptions,
-	setDropDownChoice,
+	setDropDownOptionChoosen,
 }) => {
 	const [dropDownIsOpen, setDropDownIsOpen] = useState(false)
 
 	function handleChoice(option) {
-		setDropDownChoice(option)
+		setDropDownOptionChoosen(option)
 		setDropDownIsOpen(false)
 	}
 	return (
@@ -29,7 +29,7 @@ export const Filter = ({
 				<RowContainer>
 					<SubTitle
 						partOne={`VER:`}
-						partTwo={`${dropDownChoice.title}`}
+						partTwo={`${dropDownOptionChoosen.title}`}
 						size={18}
 					/>
 					&nbsp;&nbsp;
@@ -44,12 +44,15 @@ export const Filter = ({
 							key={option.id}
 							onClick={() => handleChoice(option)}
 						>
-							<Option option={option} dropDownChoice={dropDownChoice}>
+							<Option
+								option={option}
+								dropDownOptionChoosen={dropDownOptionChoosen}
+							>
 								{option.title}
 							</Option>
 							<Checked
 								option={option}
-								dropDownChoice={dropDownChoice}
+								dropDownOptionChoosen={dropDownOptionChoosen}
 								src={checked}
 							></Checked>
 						</OptionContainer>

@@ -8,7 +8,6 @@ export const StyledHomeContainer = styled.div`
 	background-color: transparent;
 	height: auto;
 	width: 100%;
-	overflow-y: hidden;
 `
 
 export const Title = styled.h1`

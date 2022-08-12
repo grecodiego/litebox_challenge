@@ -3,9 +3,9 @@ import {
 	GradientBackground,
 	BackgroundAnimation,
 	ImageContainer,
-} from './components/backgroundContainer.styled'
+} from './backgroundContainer.styled'
 export const BackgroundContainer = ({ filmImage }) => {
-	let backgroundImage = 'https://image.tmdb.org/t/p/w1280' + filmImage
+	const backgroundImage = 'https://image.tmdb.org/t/p/w1280' + filmImage
 
 	return (
 		<>

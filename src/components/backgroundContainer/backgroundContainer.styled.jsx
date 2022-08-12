@@ -24,7 +24,7 @@ export const ImageContainer = styled.div`
 			margin-top: -100%;
 		}
 		100% {
-			margin-top: -5%;
+			margin-top: 0%;
 		}
 	}
 	${(props) =>
