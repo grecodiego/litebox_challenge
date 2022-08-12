@@ -1,16 +1,9 @@
-import { useEffect, useState } from 'react'
 import { Page } from '../../components/page/page'
-import { getFilmData } from '../../repository/mainFilms/mainFilmsRepo'
 import { CenterDiv, LoadingText } from './home.styled'
 import { HomeContainer } from './components/PageContainer/homeContainer'
 import { BackgroundContainer } from '../../components/backgroundContainer/backgroundContainer'
 
-export const Home = () => {
-	const [filmData, setFilmData] = useState(null)
-	useEffect(() => {
-		getFilmData().then((res) => setFilmData(res))
-	}, [])
-
+export const Home = ({ filmData }) => {
 	if (filmData) {
 		return (
 			<Page>

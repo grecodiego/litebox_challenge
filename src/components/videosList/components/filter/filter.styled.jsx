@@ -25,6 +25,8 @@ export const RowContainer = styled.div`
 export const DropDown = styled.div`
 	display: ${({ dropDownIsOpen }) =>
 		dropDownIsOpen === true ? 'flex' : 'none'};
+	position: absolute;
+
 	flex-direction: column;
 	min-height: 100px;
 	align-items: center;
@@ -48,8 +50,8 @@ export const OptionContainer = styled.button`
 	background: ${({ theme }) => theme.backgroundColor};
 `
 export const Option = styled.h3`
-	font-family: ${({ option, dropDownChoice }) =>
-		option.id === dropDownChoice.id ? 'Regular' : 'Light'};
+	font-family: ${({ option, dropDownOptionChoosen }) =>
+		option.id === dropDownOptionChoosen.id ? 'Regular' : 'Light'};
 	font-style: normal;
 	font-weight: 400;
 	font-size: 16px;
@@ -57,7 +59,7 @@ export const Option = styled.h3`
 	letter-spacing: 4px;
 `
 export const Checked = styled.img`
-	display: ${({ option, dropDownChoice }) =>
-		option.id === dropDownChoice.id ? 'flex' : 'none'};
+	display: ${({ option, dropDownOptionChoosen }) =>
+		option.id === dropDownOptionChoosen.id ? 'flex' : 'none'};
 	width: fit-content;
 `
