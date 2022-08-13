@@ -6,12 +6,12 @@ import { Menu } from '../menu/menu'
 import React, { useState } from 'react'
 
 export function NavBar() {
-	const [menuOpen, setMenuOpen] = useState(false)
+	const [isOpen, setIsOpen] = useState(false)
 	const body = document.querySelector('body')
 
-	function handleMenuButton() {
-		setMenuOpen(!menuOpen)
-		if (menuOpen === false) {
+	function closeMenu() {
+		setIsOpen(!isOpen)
+		if (isOpen === false) {
 			body.style.position = 'fixed'
 		} else {
 			body.style.position = 'static'
@@ -20,9 +20,9 @@ export function NavBar() {
 
 	return (
 		<>
-			<Menu menuOpen={menuOpen} handleMenuButton={handleMenuButton} />
+			<Menu isOpen={isOpen} closeMenu={closeMenu} />
 			<NavContainer>
-				<MenuButton menuOpen={menuOpen} handleMenuButton={handleMenuButton} />
+				<MenuButton isOpen={isOpen} closeMenu={closeMenu} />
 				<BrandTitle />
 				<UserAvatar />
 			</NavContainer>

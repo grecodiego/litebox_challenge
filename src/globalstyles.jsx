@@ -12,7 +12,7 @@ html,
 body {
 	margin: 0px auto;
 	height: auto;
-	width: auto;
+	max-width: 100vw;
 	overflow-x: hidden;
 	overflow-y: scroll;
 	background-repeat: no-repeat;

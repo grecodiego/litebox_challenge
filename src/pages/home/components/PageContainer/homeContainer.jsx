@@ -1,5 +1,5 @@
 import { VideosList } from '../../../../components/videosList/videosList'
-import { Button } from '../../../../components/button/button'
+import { PrimaryButton } from '../../../../components/buttons/primaryButton'
 import playTriangle from '../../../../assets/images/png/playTriangle.png'
 import plus from '../../../../assets/images/png/plus.png'
 import { SubTitle } from '../../../../components/subTitle/subTitle'
@@ -10,10 +10,9 @@ export const HomeContainer = ({ filmData }) => {
 		<StyledHomeContainer>
 			<SubTitle partOne={`ORIGINAL DE `} partTwo={`LITEFLIX`} size={20} />
 			<Title> {filmData.title}</Title>
-			<Button text={'REPRODUCIR'} image={playTriangle}></Button>
-			<Button border={true} text={'MI LISTA'} image={plus}></Button>
+			<PrimaryButton text={'REPRODUCIR'} image={playTriangle} />
+			<PrimaryButton border={true} text={'MI LISTA'} image={plus} />
 			<VideosList />
-			<main></main>
 		</StyledHomeContainer>
 	)
 }

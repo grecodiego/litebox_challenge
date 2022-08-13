@@ -13,6 +13,6 @@ export const StyledMenu = styled.div`
 	justify-content: flex-start;
 	background: ${({ theme }) => theme.backgroundColor};
 	transition: all 1s ease-out;
-	transform: ${({ menuOpen }) =>
-		menuOpen ? `	translateX(100%) ` : `translateX:(-100%)`};
+	transform: ${({ isOpen }) =>
+		isOpen ? `	translateX(100%) ` : `translateX:(-100%)`};
 `

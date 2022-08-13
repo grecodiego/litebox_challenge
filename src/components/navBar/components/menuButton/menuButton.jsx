@@ -1,12 +1,12 @@
 import { StyledMenu, TopLine, MidLine, BottomLine } from './menuButton.styled'
 
-export const MenuButton = ({ menuOpen, handleMenuButton }) => {
+export const MenuButton = ({ isOpen, closeMenu }) => {
 	return (
 		<>
-			<StyledMenu value={menuOpen} onClick={handleMenuButton}>
-				<TopLine value={menuOpen} />
-				<MidLine value={menuOpen} />
-				<BottomLine value={menuOpen} />
+			<StyledMenu value={isOpen} onClick={closeMenu}>
+				<TopLine value={isOpen} />
+				<MidLine value={isOpen} />
+				<BottomLine value={isOpen} />
 			</StyledMenu>
 		</>
 	)
