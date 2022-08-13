@@ -1,10 +1,14 @@
-import { StyledButton, ButtonTitle, ImageIcon } from './button.styled'
+import { StyledButton, ImageIcon } from './button.styled'
 
-export const Button = ({ border, text, image }) => {
+export const Button = ({ border, image, onClick, backgroundColor }) => {
 	return (
-		<StyledButton border={border} image={image}>
-			<ImageIcon src={image} />
-			<ButtonTitle>&nbsp; {text}</ButtonTitle>
+		<StyledButton
+			border={border}
+			image={image}
+			onClick={onClick}
+			backgroundColor={backgroundColor}
+		>
+			{image !== undefined ? <ImageIcon src={image} /> : null}
 		</StyledButton>
 	)
 }
