@@ -1,5 +1,5 @@
 export const menuOptions = [
-	{ id: 1, title: 'INICIO', handle: () => {}, path: '' },
+	{ id: 1, title: 'INICIO', handle: () => {}, path: '/' },
 	{ id: 2, title: 'SERIES', handle: () => {}, path: '' },
 	{ id: 3, title: 'PELICULAS', handle: () => {}, path: '' },
 	{ id: 4, title: 'AGREGADAS RECIENTEMENTE', handle: () => {}, path: '' },

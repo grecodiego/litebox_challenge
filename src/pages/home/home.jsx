@@ -1,7 +1,7 @@
-import { Page } from '../../components/page/page'
 import { CenterDiv, LoadingText } from './home.styled'
 import { HomeContainer } from './components/PageContainer/homeContainer'
 import { BackgroundContainer } from '../../components/backgroundContainer/backgroundContainer'
+import { Page } from '../../components/page/page'
 
 export const Home = ({ filmData }) => {
 	if (filmData) {

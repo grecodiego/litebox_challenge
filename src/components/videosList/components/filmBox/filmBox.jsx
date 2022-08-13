@@ -3,6 +3,7 @@ import { BoxContent, PlayCircle } from './filmBox.styled'
 import playCircle from '../../../../assets/images/png/playCircle.png'
 
 export const FilmBox = ({ src, title, index }) => {
+	console.log(playCircle)
 	return (
 		<>
 			<StyledFilmBox index={index}>
