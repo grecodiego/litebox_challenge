@@ -12,6 +12,7 @@ function App() {
 	useEffect(() => {
 		getFilmData().then((res) => setFilmData(res))
 	}, [])
+
 	return (
 		<ThemeProvider theme={theme}>
 			<>
