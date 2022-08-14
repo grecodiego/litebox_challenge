@@ -1,24 +1,67 @@
-import React, { useCallback, useState, useEffect } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useCallback, useState, useEffect, Fragment } from 'react'
 import { useDropzone } from 'react-dropzone'
 import Clip from '../../assets/images/png/clip.png'
-import { SecundaryButton } from '../../components/buttons/secundaryButton'
+import { SecondaryButton } from '../../components/buttons/secondaryButton'
 import {
 	StyledInputFile,
 	Text,
 	ImageIcon,
-	ButtonsContainer,
 	InputFilmName,
+	ProgressBarContainer,
+	ProgressBarRail,
+	ProgressBar,
+	TextProgressBar,
+	ButtonProgressBar,
+	StyledInputFileContainer,
+	ProgressBarError,
 } from './inputFile.styled'
 
-export function InputFile() {
+export function InputFile({ setIsImageFetched }) {
 	const [image, setImage] = useState(null)
 	const [imageOnDrop, setImageOnDrop] = useState(false)
 	const [urlImage, setUrlImage] = useState(null)
 	const [filmNameInputValue, setFilmNameInputValue] = useState('')
+	const [percentage, setPercentage] = useState(0)
+	const [uploadError, setUploadError] = useState(false)
+	const [imageLoaded, setImageLoaded] = useState(false)
 
-	let localStorageData = []
+	useEffect(() => {
+		if (urlImage !== null) {
+			let localStorageData = []
+			if (localStorage.getItem('userMovies') !== null) {
+				localStorageData = JSON.parse(localStorage.getItem('userMovies'))
+			}
+			localStorageData.push({ imageUrl: urlImage, title: filmNameInputValue })
+			let localStorageDataJSON = JSON.stringify(localStorageData)
+			localStorage.setItem('userMovies', localStorageDataJSON)
+		}
+	}, [urlImage])
 
-	function handleUploadImage() {
+	const onDrop = useCallback((acceptedFiles) => {
+		setImage(acceptedFiles[0])
+		setImageOnDrop(true)
+
+		const formData = new FormData()
+		for (const file of acceptedFiles) formData.append('file', file)
+
+		const xhr = new XMLHttpRequest()
+		xhr.upload.onprogress = (event) => {
+			const percentage = parseInt((event.loaded / event.total) * 100)
+			setPercentage(percentage)
+		}
+		xhr.onreadystatechange = () => {
+			if (xhr.readyState !== 4) return
+			if (xhr.status !== 200) {
+				setUploadError(true)
+			}
+			setImageLoaded(true)
+		}
+		xhr.open('POST', 'https://httpbin.org/post', true)
+		xhr.send(formData)
+	}, [])
+
+	function handleFetchImage() {
 		if (image) {
 			const reader = new FileReader()
 			reader.onloadend = () => {
@@ -26,24 +69,10 @@ export function InputFile() {
 			}
 			reader.readAsDataURL(image)
 		} else {
-			console.error('error')
+			alert('error')
 		}
+		setIsImageFetched(true)
 	}
-
-	useEffect(() => {
-		if (urlImage !== null) {
-			localStorageData = JSON.parse(localStorage.getItem('userMovies'))
-			localStorageData.push({ imageUrl: urlImage, title: filmNameInputValue })
-			let localStorageDataJSON = JSON.stringify(localStorageData)
-			localStorage.setItem('userMovies', localStorageDataJSON)
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [urlImage])
-
-	const onDrop = useCallback((acceptedFiles) => {
-		setImage(acceptedFiles[0])
-		setImageOnDrop(true)
-	}, [])
 
 	const {
 		getRootProps,
@@ -60,14 +89,44 @@ export function InputFile() {
 	})
 
 	return isDragActive === false ? (
-		<section>
-			<StyledInputFile {...getRootProps()}>
-				<input {...getInputProps()} />
-				<ImageIcon src={Clip} />
-				<Text>AGREGÁ UN ARCHIVO</Text>
-			</StyledInputFile>
-			{isDragAccept && <p>All files will be accepted</p>}
-			{isDragReject && <p>Some files will be rejected</p>}
+		<StyledInputFileContainer>
+			{imageOnDrop === false ? (
+				<StyledInputFile {...getRootProps()}>
+					<input {...getInputProps()} />
+					<ImageIcon src={Clip} />
+					<Text>AGREGÁ UN ARCHIVO</Text>
+					{isDragAccept && <p>All files will be accepted</p>}
+					{isDragReject && <p>Some files will be rejected</p>}
+				</StyledInputFile>
+			) : (
+				<ProgressBarContainer>
+					<TextProgressBar>
+						{uploadError === false
+							? percentage === 100
+								? '100% cargado'
+								: `CARGANDO ${percentage}%`
+							: '¡ERROR! no se pudo cargar la película'}
+					</TextProgressBar>
+					<ProgressBarRail>
+						{uploadError === false ? (
+							percentage === 100 ? (
+								<ProgressBar percentage={100} />
+							) : (
+								<ProgressBar percentage={percentage} />
+							)
+						) : (
+							<ProgressBarError />
+						)}
+					</ProgressBarRail>
+					<ButtonProgressBar imageLoaded={imageLoaded}>
+						{uploadError === false
+							? percentage === 100
+								? '¡LISTO!'
+								: `CANCELAR`
+							: 'REINTENTAR'}
+					</ButtonProgressBar>
+				</ProgressBarContainer>
+			)}
 			<InputFilmName
 				border={true}
 				placeholder={'TITULO'}
@@ -76,17 +135,18 @@ export function InputFile() {
 				name={'filmNameInput'}
 				onChange={(e) => setFilmNameInputValue(e.target.value)}
 			/>
-			<ButtonsContainer>
-				<SecundaryButton
-					text={'SUBIR PELiCULA'}
-					backgroundColor={true}
-					imageOnDrop={imageOnDrop}
-					filmNameInputValue={filmNameInputValue}
-					onClick={imageOnDrop === true ? handleUploadImage : null}
-				/>
-			</ButtonsContainer>
-		</section>
+
+			<SecondaryButton
+				text={'SUBIR PELiCULA'}
+				enable={imageLoaded && filmNameInputValue.length > 0 ? true : false}
+				onClick={
+					imageLoaded === true && filmNameInputValue !== ''
+						? handleFetchImage
+						: null
+				}
+			/>
+		</StyledInputFileContainer>
 	) : (
-		<div></div>
+		<p>error</p>
 	)
 }

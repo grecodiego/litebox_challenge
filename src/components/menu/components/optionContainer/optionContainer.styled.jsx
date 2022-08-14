@@ -12,10 +12,10 @@ export const StyledOptionContainer = styled.button`
 `
 export const Option = styled.h3`
 	color: ${({ theme }) => theme.secondaryColor};
-	font-family: ${({ option, optionChoosen }) =>
-		option.id === optionChoosen.id ? 'Regular' : 'Light'};
+	font-family: 'Regular';
 	font-style: normal;
-	font-weight: 400;
+	font-weight: ${({ option, optionChoosen }) =>
+		option.id === optionChoosen.id ? '700' : '400'};
 	font-size: 16px;
 	line-height: 16px;
 	letter-spacing: 4px;

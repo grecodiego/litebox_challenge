@@ -16,15 +16,13 @@ export const PrimaryStyledButton = styled.button`
 	border: ${({ border }) =>
 		border === true ? '1px solid rgba(255, 255, 255, 0.5);' : 'none'};
 `
-export const SecundaryStyledButton = styled.button`
+export const SecondaryStyledButton = styled.button`
 	${defaultButton};
 	margin: 0 17% 0 17%;
 	color: ${({ theme }) => theme.secondaryColor};
 	border: none;
-	background-color: ${({ imageOnDrop, filmNameInputValue }) =>
-		imageOnDrop !== false && filmNameInputValue.length > 0
-			? '#FFFFFF'
-			: '#919191'};
+	background-color: ${({ enable }) =>
+		enable === true ? '#FFFFFF' : '#919191'};
 `
 export const ImageIcon = styled.img`
 	margin-right: 12px;
@@ -36,8 +34,7 @@ const defaultText = css`
 	font-size: 18px;
 	line-height: 22px;
 	letter-spacing: 4px;
-	padding-top: 5px;
-	font-family: 'Light';
+	font-family: 'Regular';
 `
 
 export const PrimaryText = styled.p`
@@ -45,7 +42,7 @@ export const PrimaryText = styled.p`
 	color: ${({ theme }) => theme.secondaryColor};
 `
 
-export const SecundaryText = styled.p`
+export const SecondaryText = styled.p`
 	${defaultText}
 	color: ${({ theme }) => theme.backgroundColor};
 `

@@ -7,6 +7,7 @@ export const CenterDiv = styled.div`
 	width: 100%;
 	height: 100vh;
 `
+
 export const LoadingText = styled.h1`
 	display: flex;
 	padding: 0 10% 0 10%;
