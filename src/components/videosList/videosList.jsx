@@ -1,7 +1,12 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect } from 'react'
 import { getAleatoryPopularFilms } from '../../repository/videosListAPI/videosListRepo'
 import { FilmBox } from './components/filmBox/filmBox'
-import { StyledVideoList, FilmsContainer } from './videosList.styled'
+import {
+	StyledVideoList,
+	FilmsContainer,
+	LoadingText,
+	CenterDiv,
+} from './videosList.styled'
 import { Filter } from './components/filter/filter'
 import { useInView } from 'react-intersection-observer'
 
@@ -29,72 +34,75 @@ export const VideosList = () => {
 		case 1:
 			if (filmsData !== null) {
 				return (
-					<Fragment>
-						<StyledVideoList>
-							<Filter
-								dropDownOptionChoosen={dropDownOptionChoosen}
-								setDropDownOptionChoosen={setDropDownOptionChoosen}
-								filtersOptions={filtersOptions}
-							/>
-							<FilmsContainer ref={ref}>
-								{inView === true ? (
-									filmsData.slice(-4).map((film, index) => {
-										console.log()
-										return (
-											<FilmBox
-												index={index}
-												key={film.id}
-												title={film.title}
-												src={
-													'https://image.tmdb.org/t/p/w500' + film.backdrop_path
-												}
-											/>
-										)
-									})
-								) : (
-									<div></div>
-								)}
-							</FilmsContainer>
-						</StyledVideoList>
-					</Fragment>
+					<StyledVideoList>
+						<Filter
+							dropDownOptionChoosen={dropDownOptionChoosen}
+							setDropDownOptionChoosen={setDropDownOptionChoosen}
+							filtersOptions={filtersOptions}
+						/>
+						<FilmsContainer ref={ref}>
+							{inView === true ? (
+								filmsData.slice(-4).map((film, index) => {
+									return (
+										<FilmBox
+											index={index}
+											key={film.id}
+											title={film.title}
+											src={
+												'https://image.tmdb.org/t/p/w500' + film.backdrop_path
+											}
+										/>
+									)
+								})
+							) : (
+								<div></div>
+							)}
+						</FilmsContainer>
+					</StyledVideoList>
 				)
 			} else {
-				return <p>Loading...</p>
+				return <LoadingText>LOADING</LoadingText>
 			}
 		case 2:
 			if (localData !== null) {
 				return (
-					<Fragment>
-						<StyledVideoList>
-							<Filter
-								dropDownOptionChoosen={dropDownOptionChoosen}
-								setDropDownOptionChoosen={setDropDownOptionChoosen}
-								filtersOptions={filtersOptions}
-							/>
+					<StyledVideoList>
+						<Filter
+							dropDownOptionChoosen={dropDownOptionChoosen}
+							setDropDownOptionChoosen={setDropDownOptionChoosen}
+							filtersOptions={filtersOptions}
+						/>
 
-							<FilmsContainer ref={ref}>
-								{inView === true ? (
-									localData.map((film, index) => {
-										return (
-											<FilmBox
-												key={index}
-												title={film.title}
-												src={film.imageUrl}
-											/>
-										)
-									})
-								) : (
-									<div></div>
-								)}
-							</FilmsContainer>
-						</StyledVideoList>
-					</Fragment>
+						<FilmsContainer ref={ref}>
+							{inView === true ? (
+								localData.map((film, index) => {
+									return (
+										<FilmBox
+											key={index}
+											title={film.title}
+											src={film.imageUrl}
+										/>
+									)
+								})
+							) : (
+								<div></div>
+							)}
+						</FilmsContainer>
+					</StyledVideoList>
 				)
 			} else {
-				return <p>Loading...</p>
+				return (
+					<CenterDiv>
+						<LoadingText>LOADING</LoadingText>
+					</CenterDiv>
+				)
 			}
 
 		default:
-			return <p>Loading...</p>
+			return (
+				<CenterDiv>
+					<LoadingText>LOADING</LoadingText>
+				</CenterDiv>
+			)
 	}
 }

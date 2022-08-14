@@ -15,7 +15,6 @@ export const originDefault = css`
 
 export const FirstPartOriginTitle = styled.h3`
 	font-family: 'Light';
-	padding-top: 3px;
 	font-size: ${({ size }) => size}px;
 	${originDefault}
 `

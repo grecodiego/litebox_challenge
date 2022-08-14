@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import Regular from './fonts/BebasNeue-Regular.ttf'
+import regular from './fonts/BebasNeue-Regular.ttf'
 import Light from './fonts/BebasNeue-Light.ttf'
 
 export const GlobalStyles = createGlobalStyle`
@@ -12,21 +12,25 @@ html,
 body {
 	margin: 0px auto;
 	height: auto;
-	max-width: 100vw;
+	width: 100%;
 	overflow-x: hidden;
-	overflow-y: scroll;
 	background-repeat: no-repeat;
 	background-color: ${({ theme }) => theme.backgroundColor};
+	overscroll-behavior: none;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
 }
 @font-face {
 	font-family: 'Regular';
 	src: local('Bebas Neue Regular'),
-		url(${Regular}) format('truetype');
+		url(${regular}) format('truetype');
+		font-display: auto; 
 }
 @font-face {
 	font-family: 'Light'; 
 	src: local('Bebas Neue Light'),
 		url(${Light}) format('truetype');
+		font-display: auto; 
 }
 @media only screen and (min-device-width: 480px) {
 	::-webkit-scrollbar {

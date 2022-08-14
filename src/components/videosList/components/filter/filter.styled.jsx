@@ -26,7 +26,6 @@ export const DropDown = styled.div`
 	display: ${({ dropDownIsOpen }) =>
 		dropDownIsOpen === true ? 'flex' : 'none'};
 	position: absolute;
-
 	flex-direction: column;
 	min-height: 100px;
 	align-items: center;
@@ -50,10 +49,10 @@ export const OptionContainer = styled.button`
 	background: ${({ theme }) => theme.backgroundColor};
 `
 export const Option = styled.h3`
-	font-family: ${({ option, dropDownOptionChoosen }) =>
-		option.id === dropDownOptionChoosen.id ? 'Regular' : 'Light'};
+	font-family: 'Regular';
 	font-style: normal;
-	font-weight: 400;
+	font-weight: ${({ option, dropDownOptionChoosen }) =>
+		option.id === dropDownOptionChoosen.id ? '700' : '400'};
 	font-size: 16px;
 	line-height: 16px;
 	letter-spacing: 4px;
