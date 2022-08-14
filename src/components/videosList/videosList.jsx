@@ -61,7 +61,11 @@ export const VideosList = () => {
 					</StyledVideoList>
 				)
 			} else {
-				return <LoadingText>LOADING</LoadingText>
+				return (
+					<CenterDiv>
+						<LoadingText>LOADING</LoadingText>
+					</CenterDiv>
+				)
 			}
 		case 2:
 			if (localData !== null) {

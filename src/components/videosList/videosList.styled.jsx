@@ -3,10 +3,11 @@ import styled from 'styled-components'
 export const StyledVideoList = styled.div`
 	display: flex;
 	align-items: center;
+	justify-content: flex-start;
 	flex-direction: column;
 	margin-top: 12%;
 	overflow-x: hidden;
-	height: fit-content;
+	height: auto;
 `
 
 export const FilmsContainer = styled.div`
@@ -16,6 +17,7 @@ export const FilmsContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	height: fit-content;
+	min-height: 50vh;
 	width: 100%;
 	margin-top: 7%;
 	padding: 0% 10% 0 10%;
@@ -26,7 +28,7 @@ export const CenterDiv = styled.div`
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: 300px;
+	min-height: 300px;
 `
 
 export const LoadingText = styled.h1`

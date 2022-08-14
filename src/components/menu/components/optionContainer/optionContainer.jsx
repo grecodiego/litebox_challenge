@@ -6,7 +6,7 @@ export const OptionContainer = ({
 	handleClickOption,
 }) => {
 	return (
-		<StyledOptionContainer>
+		<StyledOptionContainer optionChoosen={optionChoosen} option={option}>
 			<Option
 				option={option}
 				optionChoosen={optionChoosen}
