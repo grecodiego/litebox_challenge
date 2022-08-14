@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const StyledFilmBox = styled.div`
 	display: flex;
 	width: 100%;
-	height: 190px;
 	padding-bottom: 7%;
 	border-radius: 4px;
 	animation: pulse2 ${({ index }) => (index + 1) * 1.5}s;
@@ -24,10 +23,9 @@ export const BoxContent = styled.div`
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: 100%;
+	height: 45vw;
 	background-image: url(${({ src }) => src});
-	background-size: contain;
-	background-position: center;
+	background-size: cover;
 	background-repeat: no-repeat;
 `
 export const PlayCircle = styled.img`
@@ -38,6 +36,7 @@ export const PlayCircle = styled.img`
 `
 export const FilmTitle = styled.h2`
 	font-family: 'Regular';
+	padding-top: 3px;
 	font-size: 16px;
 	color: #ffffff;
 	letter-spacing: 4px;

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const StyledHomeContainer = styled.div`
 	display: flex;
 	position: relative;
-	margin-top: -50%;
+	margin-top: -220px;
 	flex-direction: column;
 	background-color: transparent;
 	height: auto;
@@ -22,7 +22,7 @@ export const Title = styled.h1`
 	margin-top: 16px;
 	justify-content: center;
 	letter-spacing: 4vw;
-	padding: 0 10% 5% 10%;
+	padding: 0 10% 36px 10%;
 	text-align: center;
 	text-transform: uppercase;
 	width: 100%;

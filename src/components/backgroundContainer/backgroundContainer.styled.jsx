@@ -57,9 +57,9 @@ export const BackgroundAnimation = styled.div`
 
 export const GradientBackground = styled.div`
 	display: flex;
-	margin-bottom: -1%;
+	margin-bottom: -0.1%;
 	width: 100%;
-	height: 200px;
+	height: 193px;
 	background: linear-gradient(
 		180deg,
 		rgba(36, 36, 36, 0) 0%,
