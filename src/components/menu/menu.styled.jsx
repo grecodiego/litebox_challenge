@@ -9,10 +9,10 @@ export const StyledMenu = styled.div`
 	overflow-y: hidden;
 	width: 100vw;
 	height: 100%;
-	left: -100%;
+	left: -110%;
 	justify-content: flex-start;
 	background: ${({ theme }) => theme.backgroundColor};
 	transition: all 1s ease-out;
 	transform: ${({ isOpen }) =>
-		isOpen ? `	translateX(100%) ` : `translateX:(-100%)`};
+		isOpen ? `	translateX(110%) ` : `translateX:(-110%)`};
 `

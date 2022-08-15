@@ -4,8 +4,8 @@ export const StyledMenu = styled.button`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 24px;
-	width: 24px;
+	height: 28px;
+	width: 28px;
 	padding: 6px;
 	background: transparent;
 	border: none;
@@ -25,7 +25,7 @@ export const defaultLine = css`
 `
 
 export const TopLine = styled.div`
-	width: ${(props) => (props.value === true ? ' 17px;' : ' 27px;')};
+	width: ${(props) => (props.value === true ? ' 24px;' : ' 27px;')};
 	height: 1px;
 	${defaultLine};
 	:first-child {
@@ -43,7 +43,7 @@ export const MidLine = styled.div`
 export const BottomLine = styled.div`
 	height: 1px;
 	${defaultLine}
-	width: ${(props) => (props.value === true ? ' 17px;' : ' 17px;')};
+	width: ${(props) => (props.value === true ? ' 24px;' : ' 17px;')};
 	:nth-child(3) {
 		transform: ${({ value }) => (value ? `rotate(-45deg);` : `rotate(0);`)};
 	}

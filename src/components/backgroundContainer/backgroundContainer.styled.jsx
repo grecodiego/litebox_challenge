@@ -6,6 +6,11 @@ export const StyledBackgroundContainer = styled.div`
 	width: 100%;
 	background-position: center;
 	background-size: cover;
+
+	@media (min-width: 768px) {
+		height: 100%;
+		position: fixed;
+	}
 `
 export const ImageContainer = styled.div`
 	display: flex;
@@ -31,6 +36,18 @@ export const ImageContainer = styled.div`
 		`
 			background-image: url(${props.backgroundImage});
 		`}
+	@media (min-width: 768px) {
+		height: auto;
+		animation-timing-function: ease-in-out;
+		@keyframes down-image {
+			0% {
+				scale: 1.4;
+			}
+			100% {
+				scale: 1;
+			}
+		}
+	}
 `
 
 export const BackgroundAnimation = styled.div`
@@ -42,7 +59,7 @@ export const BackgroundAnimation = styled.div`
 	width: 100%;
 	background-position: center;
 	background-size: cover;
-	animation: pulses 5s;
+	animation: pulses 6s;
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: forwards;
 	@keyframes pulses {
@@ -50,14 +67,19 @@ export const BackgroundAnimation = styled.div`
 			background-color: ${({ theme }) => theme.backgroundColor};
 		}
 		100% {
-			background-color: transparent;
+			background-color: none;
 		}
+	}
+
+	@media (min-width: 768px) {
+		height: 100%;
+		position: relative;
 	}
 `
 
 export const GradientBackground = styled.div`
 	display: flex;
-	margin-bottom: -0.1%;
+	margin-bottom: -1%;
 	width: 100%;
 	height: 193px;
 	background: linear-gradient(
@@ -65,4 +87,7 @@ export const GradientBackground = styled.div`
 		rgba(36, 36, 36, 0) 0%,
 		${({ theme }) => theme.backgroundColor} 100%
 	);
+	@media (min-width: 768px) {
+		display: none;
+	}
 `

@@ -27,22 +27,28 @@ export function InputFile({ setIsImageFetched }) {
 	const [imageLoaded, setImageLoaded] = useState(false)
 
 	useEffect(() => {
+		console.log(urlImage)
 		if (urlImage !== null) {
+			console.log('estoy aca3')
 			let localStorageData = []
 			if (localStorage.getItem('userMovies') !== null) {
 				localStorageData = JSON.parse(localStorage.getItem('userMovies'))
 			}
+			localStorage.clear()
 			localStorageData.push({ imageUrl: urlImage, title: filmNameInputValue })
 			let localStorageDataJSON = JSON.stringify(localStorageData)
 			localStorage.setItem('userMovies', localStorageDataJSON)
+			setIsImageFetched(true)
 		}
 	}, [urlImage])
 
 	const onDrop = useCallback((acceptedFiles) => {
+		console.log('acceptedFiles', acceptedFiles)
 		setImage(acceptedFiles[0])
 		setImageOnDrop(true)
 
-		const formData = new FormData()
+		//Simulating upload progress
+		/* const formData = new FormData()
 		for (const file of acceptedFiles) formData.append('file', file)
 
 		const xhr = new XMLHttpRequest()
@@ -55,23 +61,36 @@ export function InputFile({ setIsImageFetched }) {
 			if (xhr.status !== 200) {
 				setUploadError(true)
 			}
-			setImageLoaded(true)
+
+			console.log('image', image)
 		}
 		xhr.open('POST', 'https://httpbin.org/post', true)
 		xhr.send(formData)
+ */ setTimeout(() => {
+			setPercentage(30)
+		}, 100)
+		setTimeout(() => {
+			setPercentage(50)
+		}, 1500)
+		setTimeout(() => {
+			console.log('image', image)
+			setPercentage(100)
+			setImageLoaded(true)
+		}, 2000)
 	}, [])
 
 	function handleFetchImage() {
+		console.log(image, 'image2')
 		if (image) {
 			const reader = new FileReader()
 			reader.onloadend = () => {
 				setUrlImage(reader.result)
+				console.log('reader.result', reader.result)
 			}
 			reader.readAsDataURL(image)
 		} else {
 			alert('error')
 		}
-		setIsImageFetched(true)
 	}
 
 	const {

@@ -1,13 +1,31 @@
 import styled from 'styled-components'
 
-export const StyledVideoList = styled.div`
+export const VideosContainer = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 	flex-direction: column;
 	margin-top: 12%;
 	overflow-x: hidden;
+	overflow-y: hidden;
 	height: auto;
+	@media (min-width: 768px) {
+		margin-top: 10%;
+		margin-bottom: 3%;
+		width: 220px;
+		height: auto;
+	}
+`
+
+export const StyledVideoList = styled.div`
+	display: flex;
+	width: 100%;
+	min-height: fit-content;
+	@media (min-width: 768px) {
+		margin-top: 3%;
+		height: 100%;
+		min-height: auto;
+	}
 `
 
 export const FilmsContainer = styled.div`
@@ -21,6 +39,12 @@ export const FilmsContainer = styled.div`
 	width: 100%;
 	margin-top: 7%;
 	padding: 0% 10% 0 10%;
+	@media (min-width: 768px) {
+		height: 100%;
+		padding: 0;
+		margin-top: 0;
+		justify-content: space-around;
+	}
 `
 
 export const CenterDiv = styled.div`
@@ -29,6 +53,9 @@ export const CenterDiv = styled.div`
 	align-items: center;
 	width: 100%;
 	min-height: 300px;
+	@media (min-width: 768px) {
+		min-height: auto;
+	}
 `
 
 export const LoadingText = styled.h1`

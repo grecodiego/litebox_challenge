@@ -6,6 +6,7 @@ import {
 	FilmsContainer,
 	LoadingText,
 	CenterDiv,
+	VideosContainer,
 } from './videosList.styled'
 import { Filter } from './components/filter/filter'
 import { useInView } from 'react-intersection-observer'
@@ -32,81 +33,79 @@ export const VideosList = () => {
 
 	switch (dropDownOptionChoosen.id) {
 		case 1:
-			if (filmsData !== null) {
-				return (
-					<StyledVideoList>
-						<Filter
-							dropDownOptionChoosen={dropDownOptionChoosen}
-							setDropDownOptionChoosen={setDropDownOptionChoosen}
-							filtersOptions={filtersOptions}
-						/>
-						<FilmsContainer ref={ref}>
-							{inView === true ? (
-								filmsData.slice(-4).map((film, index) => {
-									return (
-										<FilmBox
-											index={index}
-											key={film.id}
-											title={film.title}
-											src={
-												'https://image.tmdb.org/t/p/w500' + film.backdrop_path
-											}
-										/>
-									)
-								})
-							) : (
-								<div></div>
-							)}
-						</FilmsContainer>
-					</StyledVideoList>
-				)
-			} else {
-				return (
-					<CenterDiv>
-						<LoadingText>LOADING</LoadingText>
-					</CenterDiv>
-				)
-			}
-		case 2:
-			if (localData !== null) {
-				return (
-					<StyledVideoList>
-						<Filter
-							dropDownOptionChoosen={dropDownOptionChoosen}
-							setDropDownOptionChoosen={setDropDownOptionChoosen}
-							filtersOptions={filtersOptions}
-						/>
-
-						<FilmsContainer ref={ref}>
-							{inView === true ? (
-								localData.map((film, index) => {
-									return (
-										<FilmBox
-											key={index}
-											title={film.title}
-											src={film.imageUrl}
-										/>
-									)
-								})
-							) : (
-								<div></div>
-							)}
-						</FilmsContainer>
-					</StyledVideoList>
-				)
-			} else {
-				return (
-					<CenterDiv>
-						<LoadingText>LOADING</LoadingText>
-					</CenterDiv>
-				)
-			}
-
-		default:
 			return (
-				<CenterDiv>
-					<LoadingText>LOADING</LoadingText>
-				</CenterDiv>
+				<VideosContainer>
+					<Filter
+						dropDownOptionChoosen={dropDownOptionChoosen}
+						setDropDownOptionChoosen={setDropDownOptionChoosen}
+						filtersOptions={filtersOptions}
+					/>
+
+					<StyledVideoList>
+						<FilmsContainer ref={ref}>
+							{filmsData !== null ? (
+								inView === true ? (
+									filmsData.slice(-4).map((film) => {
+										return (
+											<FilmBox
+												key={film.id}
+												title={film.title}
+												voteAverage={film.vote_average}
+												date={film.release_date}
+												src={
+													'https://image.tmdb.org/t/p/w500' + film.backdrop_path
+												}
+											/>
+										)
+									})
+								) : (
+									<div></div>
+								)
+							) : (
+								<CenterDiv>
+									<LoadingText>LOADING</LoadingText>
+								</CenterDiv>
+							)}
+						</FilmsContainer>
+					</StyledVideoList>
+				</VideosContainer>
 			)
+
+		case 2:
+			return (
+				<VideosContainer>
+					<Filter
+						dropDownOptionChoosen={dropDownOptionChoosen}
+						setDropDownOptionChoosen={setDropDownOptionChoosen}
+						filtersOptions={filtersOptions}
+					/>
+
+					<StyledVideoList>
+						<FilmsContainer ref={ref}>
+							{localData !== null ? (
+								inView === true ? (
+									localData.slice(-4).map((film, index) => {
+										return (
+											<FilmBox
+												key={index}
+												title={film.title}
+												src={film.imageUrl}
+											/>
+										)
+									})
+								) : (
+									<div></div>
+								)
+							) : (
+								<CenterDiv>
+									<LoadingText>NO TIENES PELICULAS CARGADS</LoadingText>
+								</CenterDiv>
+							)}
+						</FilmsContainer>
+					</StyledVideoList>
+				</VideosContainer>
+			)
+		default:
+			break
 	}
 }
