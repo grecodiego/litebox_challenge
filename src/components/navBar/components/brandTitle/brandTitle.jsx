@@ -12,7 +12,6 @@ export const BrandTitle = () => {
 
 const TitleContainer = styled.div`
 	display: flex;
-	padding-top: 5px;
 	flex-direction: row;
 	color: ${({ theme }) => theme.primaryColor};
 	letter-spacing: 4px;
@@ -27,9 +26,7 @@ const FirstTitlePart = styled.p`
 `
 const SecondTitlePart = styled.p`
 	display: flex;
-	padding-top: 1.6px;
-	text-align: center;
 	font-family: 'Light';
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 700;
 `

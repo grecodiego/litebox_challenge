@@ -2,9 +2,12 @@ import styled from 'styled-components'
 
 export const StyledVideoList = styled.div`
 	display: flex;
+	align-items: center;
+	justify-content: flex-start;
 	flex-direction: column;
 	margin-top: 12%;
 	overflow-x: hidden;
+	height: auto;
 `
 
 export const FilmsContainer = styled.div`
@@ -13,27 +16,36 @@ export const FilmsContainer = styled.div`
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	height: auto;
+	height: fit-content;
+	min-height: 50vh;
 	width: 100%;
 	margin-top: 7%;
 	padding: 0% 10% 0 10%;
-	animation: pulse2 4s;
-	animation-timing-function: ease-in-out;
-	@keyframes pulse2 {
-		0% {
-			margin-left: 100%;
-		}
-		100% {
-			margin-left: 0%;
-		}
-	}
 `
 
-export const Filter = styled.div`
+export const CenterDiv = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: row;
-	height: auto;
 	width: 100%;
+	min-height: 300px;
+`
+
+export const LoadingText = styled.h1`
+	display: flex;
+	text-align: center;
+	padding: 0 10% 0 10%;
+	width: 100%;
+	justify-content: center;
+	text-transform: uppercase;
+	height: auto;
+	flex-direction: row;
+	color: ${({ theme }) => theme.primaryColor};
+	letter-spacing: 1vw;
+	text-align: center;
+	line-height: 24px;
+	font-size: 24px;
+	font-family: 'Regular';
+	font-style: normal;
+	font-weight: 400;
 `

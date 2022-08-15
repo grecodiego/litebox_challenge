@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react'
+import { CenterDiv, LoadingText } from './home.styled'
+import { HomeContainer } from './components/homeContainer/homeContainer'
+import { BackgroundContainer } from '../../components/backgroundContainer/backgroundContainer'
 import { Page } from '../../components/page/page'
+import React, { useEffect, useState } from 'react'
 import { getFilmData } from '../../repository/mainFilms/mainFilmsRepo'
-import { CenterDiv, LoadingText } from './components/home.styled'
 
 export const Home = () => {
 	const [filmData, setFilmData] = useState(null)
@@ -10,7 +12,12 @@ export const Home = () => {
 	}, [])
 
 	if (filmData) {
-		return <Page filmData={filmData} />
+		return (
+			<Page>
+				<BackgroundContainer filmImage={filmData.backdrop_path} />
+				<HomeContainer filmData={filmData}></HomeContainer>
+			</Page>
+		)
 	} else {
 		return (
 			<CenterDiv>
