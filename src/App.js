@@ -1,5 +1,4 @@
 import { GlobalStyles } from './globalstyles'
-
 import { theme } from './themes/colors'
 import { ThemeProvider } from 'styled-components'
 import { Home } from './pages/home/home'

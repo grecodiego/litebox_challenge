@@ -10,6 +10,7 @@ export const Home = () => {
 	useEffect(() => {
 		getFilmData().then((res) => setFilmData(res))
 	}, [])
+	const viewportWidth = window.innerWidth
 
 	if (filmData) {
 		return (

@@ -6,11 +6,15 @@ const defaultButton = css`
 	justify-content: center;
 	align-items: center;
 	height: 56px;
+	margin: 0 17% 0 17%;
+	@media (min-width: 768px) {
+		margin: 0;
+		width: 248px;
+	}
 `
 
 export const PrimaryStyledButton = styled.button`
 	${defaultButton};
-	margin: 0 17% 0 17%;
 	color: ${({ theme }) => theme.secondaryColor};
 	background-color: ${({ theme }) => theme.backgroundColor};
 	border: ${({ border }) =>
@@ -18,7 +22,6 @@ export const PrimaryStyledButton = styled.button`
 `
 export const SecondaryStyledButton = styled.button`
 	${defaultButton};
-	margin: 0 17% 0 17%;
 	color: ${({ theme }) => theme.secondaryColor};
 	border: none;
 	background-color: ${({ enable }) =>

@@ -7,17 +7,20 @@ import {
 	StyledHomeContainer,
 	Title,
 	ButtonsContainer,
+	SubContainer,
 } from './homeContainer.styled'
 
 export const HomeContainer = ({ filmData }) => {
 	return (
 		<StyledHomeContainer>
-			<SubTitle partOne={`ORIGINAL DE `} partTwo={`LITEFLIX`} size={20} />
-			<Title> {filmData.title}</Title>
-			<ButtonsContainer>
-				<PrimaryButton text={'REPRODUCIR'} image={playTriangle} />
-				<PrimaryButton border={true} text={'MI LISTA'} image={plus} />
-			</ButtonsContainer>
+			<SubContainer>
+				<SubTitle partOne={`ORIGINAL DE `} partTwo={`LITEFLIX`} size={20} />
+				<Title> {filmData.title}</Title>
+				<ButtonsContainer>
+					<PrimaryButton text={'REPRODUCIR'} image={playTriangle} />
+					<PrimaryButton border={true} text={'MI LISTA'} image={plus} />
+				</ButtonsContainer>
+			</SubContainer>
 			<VideosList />
 		</StyledHomeContainer>
 	)

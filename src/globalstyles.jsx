@@ -8,6 +8,7 @@ export const GlobalStyles = createGlobalStyle`
   margin: 0%;
   padding: 0%;
 }
+
 html,
 body {
 	margin: 0px auto;
@@ -19,24 +20,22 @@ body {
 	overscroll-behavior: none;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+	@media (min-width: 768px) {
+		overflow-y: hidden;
+	}
 }
+
 @font-face {
 	font-family: 'Regular';
 	src: local('Bebas Neue Regular'),
 		url(${regular}) format('truetype');
 		font-display: auto; 
 }
+
 @font-face {
 	font-family: 'Light'; 
 	src: local('Bebas Neue Light'),
 		url(${Light}) format('truetype');
 		font-display: auto; 
 }
-@media only screen and (min-device-width: 480px) {
-	::-webkit-scrollbar {
-    display: none;}
-}
-@media only screen and (min-device-width: 768px) {
-}
-
 `
