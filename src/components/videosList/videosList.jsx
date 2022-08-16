@@ -43,8 +43,8 @@ export const VideosList = () => {
 						/>
 
 						<FilmsContainer>
-							{filmsData !== null ? (
-								inView === true ? (
+							{filmsData ? (
+								inView ? (
 									filmsData.slice(-4).map((film, index) => {
 										return (
 											<FilmBox
@@ -83,8 +83,8 @@ export const VideosList = () => {
 
 					<StyledVideoList>
 						<FilmsContainer ref={ref}>
-							{localData !== null ? (
-								inView === true ? (
+							{localData ? (
+								inView ? (
 									localData.slice(0, 4).map((film, index) => {
 										return (
 											<FilmBox

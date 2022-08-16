@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const TitleContainer = styled.div`
-	color: ${({ theme }) => theme.primaryColor};
 	display: none;
 	flex-direction: row;
+	color: ${({ theme }) => theme.primaryColor};
 	font-size: 28px;
 	letter-spacing: 4px;
 	line-height: 28px;
@@ -19,8 +19,8 @@ export const TitleContainer = styled.div`
 `
 
 export const Text = styled.p`
+	margin-top: 2px;
 	font-family: ${({ weigth }) => weigth};
 	font-style: normal;
 	font-weight: 700;
-	margin-top: 2px;
 `

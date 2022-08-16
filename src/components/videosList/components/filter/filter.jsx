@@ -1,11 +1,12 @@
 import {
-	StyledFilter,
-	ImageIcon,
-	RowContainer,
-	DropDown,
-	OptionContainer,
-	Option,
 	Checked,
+	Diamond,
+	DropDown,
+	ImageIcon,
+	Option,
+	OptionContainer,
+	RowContainer,
+	StyledFilter,
 } from './filter.styled'
 import { SubTitle } from '../../../subTitle/subTitle'
 import downArrow from '../../../../assets/images/png/downArrow.png'
@@ -38,6 +39,7 @@ export const Filter = ({
 			</StyledFilter>
 
 			<DropDown dropDownIsOpen={dropDownIsOpen}>
+				<Diamond />
 				{filtersOptions.map((option) => {
 					return (
 						<OptionContainer

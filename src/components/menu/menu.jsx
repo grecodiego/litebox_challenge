@@ -5,9 +5,10 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 
 export const Menu = ({ isOpen, closeMenu }) => {
-	const navigate = useNavigate()
 	const location = useLocation()
+	const navigate = useNavigate()
 	const [optionChoosen, setOptionChoosen] = useState('/')
+
 	useEffect(() => {
 		setOptionChoosen(location.pathname)
 	}, [location])

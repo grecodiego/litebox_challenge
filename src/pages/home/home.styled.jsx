@@ -9,19 +9,19 @@ export const CenterDiv = styled.div`
 `
 
 export const LoadingText = styled.h1`
-	color: ${({ theme }) => theme.primaryColor};
 	display: flex;
+	height: auto;
+	width: 100%;
+	padding: 0 10% 0 10%;
+	justify-content: center;
 	flex-direction: row;
+	color: ${({ theme }) => theme.primaryColor};
 	font-family: 'Regular';
 	font-size: 15vw;
 	font-style: normal;
 	font-weight: 400;
-	height: auto;
-	justify-content: center;
 	letter-spacing: 1vw;
 	line-height: 78px;
-	padding: 0 10% 0 10%;
 	text-align: center;
 	text-transform: uppercase;
-	width: 100%;
 `
