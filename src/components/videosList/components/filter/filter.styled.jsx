@@ -2,14 +2,15 @@ import styled from 'styled-components'
 
 export const StyledFilter = styled.button`
 	display: flex;
+	height: auto;
+	width: 100%;
+	margin-bottom: 1em;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	height: auto;
-	width: 100%;
 	background-color: transparent;
 	border: none;
-	margin-bottom: 1em;
+
 	@media (min-width: 992px) {
 		width: 100%;
 	}
@@ -27,33 +28,34 @@ export const RowContainer = styled.div`
 `
 
 export const DropDown = styled.div`
+	position: absolute;
+	z-index: 120;
 	display: ${({ dropDownIsOpen }) =>
 		dropDownIsOpen === true ? 'flex' : 'none'};
-	position: absolute;
-	flex-direction: column;
-	z-index: 120;
 	min-height: 100px;
+	width: 70%;
+	margin-top: 5%;
+	padding: 24px;
 	align-items: center;
 	justify-content: space-between;
-	width: 70%;
-	padding: 24px;
-	margin-top: 5%;
+	flex-direction: column;
 	background: ${({ theme }) => theme.backgroundColor};
 	border: 1px solid rgba(255, 255, 255, 0.5);
+
 	@media (min-width: 992px) {
-		min-height: auto;
 		width: 240px;
+		min-height: auto;
 		margin-top: 3%;
 	}
 `
 
 export const OptionContainer = styled.button`
 	display: flex;
-	flex-direction: row;
-	width: 100%;
-	justify-content: space-between;
 	height: auto;
+	width: 100%;
 	padding: 8px 0 8px 0;
+	flex-direction: row;
+	justify-content: space-between;
 	color: ${({ theme }) => theme.secondaryColor};
 	border: none;
 	background: ${({ theme }) => theme.backgroundColor};
@@ -76,14 +78,15 @@ export const Checked = styled.img`
 `
 
 export const Diamond = styled.div`
-	background-color: ${({ theme }) => theme.backgroundColor};
+	position: absolute;
+	top: -6px;
+	right: 36px;
 	display: none;
 	height: 12px;
-	position: absolute;
-	right: 36px;
-	top: -6px;
-	transform: rotate(45deg);
 	width: 12px;
+	background-color: ${({ theme }) => theme.backgroundColor};
+	transform: rotate(45deg);
+
 	@media (min-width: 992px) {
 		display: flex;
 	}

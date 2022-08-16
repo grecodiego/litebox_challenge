@@ -2,13 +2,14 @@ import styled from 'styled-components'
 
 export const VideosContainer = styled.div`
 	display: flex;
+	height: auto;
+	margin-top: 12%;
 	align-items: flex-end;
 	justify-content: flex-start;
 	flex-direction: column;
-	margin-top: 12%;
 	overflow-x: hidden;
 	overflow-y: hidden;
-	height: auto;
+
 	@media (min-width: 992px) {
 		margin-top: 10%;
 		margin-bottom: 3%;
@@ -23,39 +24,41 @@ export const StyledVideoList = styled.div`
 	min-height: fit-content;
 	flex-direction: column;
 	align-items: center;
+
 	@media (min-width: 992px) {
-		margin-top: 3%;
 		height: 100%;
-		min-height: auto;
 		width: 100%;
+		min-height: auto;
+		margin-top: 3%;
 	}
 `
 
 export const FilmsContainer = styled.div`
 	display: flex;
+	height: fit-content;
+	width: 100%;
+	min-height: 50vh;
+	margin-top: 7%;
+	padding: 0% 10% 0 10%;
 	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: center;
-	height: fit-content;
-	min-height: 50vh;
-	width: 100%;
-	margin-top: 7%;
-	padding: 0% 10% 0 10%;
+
 	@media (min-width: 992px) {
 		height: 100%;
-		justify-content: flex-start;
+		width: 100%;
 		margin-top: 0;
 		padding: 0;
-		width: 100%;
+		justify-content: flex-start;
 	}
 `
 
 export const CenterDiv = styled.div`
 	display: flex;
+	min-height: 300px;
+	width: 100%;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
-	min-height: 300px;
 	@media (min-width: 992px) {
 		min-height: auto;
 	}
@@ -63,12 +66,12 @@ export const CenterDiv = styled.div`
 
 export const LoadingText = styled.h1`
 	display: flex;
-	text-align: center;
-	padding: 0 10% 0 10%;
-	width: 100%;
-	justify-content: center;
-	text-transform: uppercase;
 	height: auto;
+	width: 100%;
+	padding: 0 10% 0 10%;
+	justify-content: center;
+	text-align: center;
+	text-transform: uppercase;
 	flex-direction: row;
 	color: ${({ theme }) => theme.primaryColor};
 	letter-spacing: 1vw;

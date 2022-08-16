@@ -48,7 +48,8 @@ export function InputFile({ isImageFetched, setIsImageFetched }) {
 		setImage(acceptedFiles[0])
 		setImageOnDrop(true)
 
-		//Simulating upload progress
+		//Simulating upload progress to the cloud
+
 		/* const formData = new FormData()
 		for (const file of acceptedFiles) formData.append('file', file)
 

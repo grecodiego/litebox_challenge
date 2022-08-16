@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
 export const StyledOptionContainer = styled.button`
+	display: flex;
+	width: 100%;
+	flex-direction: row;
 	align-items: center;
 	background: ${({ theme }) => theme.backgroundColor};
 	border: none;
-	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
-	width: 100%;
 	${({ option, optionChoosen }) =>
 		option.path === optionChoosen ? 'height: 100px' : 'height: 60px'};
 `

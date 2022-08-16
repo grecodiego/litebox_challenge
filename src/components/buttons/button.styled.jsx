@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 
 export const StyledButton = styled.button`
-	display: flex;
-	text-align: center;
-	justify-content: center;
 	align-items: center;
-	height: 56px;
-	margin: 0 17% 0 17%;
-	color: ${({ textColor }) => textColor};
-	opacity: ${({ disabled }) => (disabled === false ? '100%' : '50%')};
 	background-color: ${({ background }) => background};
 	border: ${({ border }) =>
 		border === true ? '1px solid rgba(255, 255, 255, 0.5);' : 'none'};
+	color: ${({ textColor }) => textColor};
+	display: flex;
+	height: 56px;
+	justify-content: center;
+	margin: 0 17% 0 17%;
+	opacity: ${({ disabled }) => (disabled === false ? '100%' : '50%')};
+	text-align: center;
 	@media (min-width: 992px) {
 		margin: 0;
 		width: 248px;

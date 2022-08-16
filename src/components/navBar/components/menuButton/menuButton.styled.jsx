@@ -1,24 +1,24 @@
 import styled, { css } from 'styled-components'
 
 export const StyledMenu = styled.button`
+	display: flex;
+	height: 28px;
+	width: 28px;
+	padding: 6px;
+	flex-direction: column;
 	background: transparent;
 	border: none;
 	cursor: pointer;
-	display: flex;
-	flex-direction: column;
-	height: 28px;
 	justify-content: space-between;
-	padding: 6px;
-	width: 28px;
 	&:focus {
 		outline: none;
 	}
 `
 
 export const defaultLine = css`
-	background: ${({ theme }) => theme.secondaryColor};
-	height: 1px;
 	position: relative;
+	height: 1px;
+	background: ${({ theme }) => theme.secondaryColor};
 	transform-origin: 1px;
 	transform: rotate(0);
 	transition: all 1s linear;
