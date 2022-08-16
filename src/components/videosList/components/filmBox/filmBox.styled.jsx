@@ -42,7 +42,7 @@ export const BoxContent = styled.div`
 	}
 
 	@media (min-width: 992px) {
-		height: 17vh;
+		height: 16.5vh;
 	}
 `
 
