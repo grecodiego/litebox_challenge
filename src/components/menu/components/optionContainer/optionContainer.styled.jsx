@@ -22,4 +22,8 @@ export const Option = styled.h3`
 		option.path === optionChoosen ? 700 : 400};
 	letter-spacing: 4px;
 	line-height: 16px;
+	:hover {
+		color: ${({ theme }) => theme.primaryColor};
+		font-weight: 700;
+	}
 `

@@ -4,10 +4,11 @@ export const StyledInputFileContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 24px;
+	height: 40%;
+	justify-content: space-between;
 	@media (min-width: 992px) {
 		align-items: center;
 		width: 100%;
-		justify-content: space-between;
 	}
 `
 
