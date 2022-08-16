@@ -12,6 +12,7 @@ export const StyledButton = styled.button`
 	margin: 0 17% 0 17%;
 	opacity: ${({ disabled }) => (disabled === false ? '100%' : '50%')};
 	text-align: center;
+
 	@media (min-width: 992px) {
 		margin: 0;
 		width: 248px;
