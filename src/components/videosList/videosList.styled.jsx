@@ -40,10 +40,11 @@ export const FilmsContainer = styled.div`
 	margin-top: 7%;
 	padding: 0% 10% 0 10%;
 	@media (min-width: 768px) {
-		width: 100%;
 		height: 100%;
-		margin-top: 0;
 		justify-content: space-evenly;
+		margin-top: 0;
+		padding: 0;
+		width: 100%;
 	}
 `
 
