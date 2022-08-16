@@ -1,18 +1,18 @@
 import styled from 'styled-components'
 
 export const StyledMenu = styled.div`
-	display: flex;
-	position: fixed;
-	flex-direction: column;
-	padding: 116px 0 0 24px;
-	z-index: 20;
-	overflow-y: hidden;
-	width: 100vw;
-	height: 100%;
-	left: -100%;
-	justify-content: flex-start;
 	background: ${({ theme }) => theme.backgroundColor};
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: flex-start;
+	left: -110%;
+	overflow-y: hidden;
+	padding: 116px 0 0 24px;
+	position: fixed;
 	transition: all 1s ease-out;
 	transform: ${({ isOpen }) =>
-		isOpen ? `	translateX(100%) ` : `translateX:(-100%)`};
+		isOpen ? `	translateX(110%) ` : `translateX:(-110%)`};
+	width: 100vw;
+	z-index: 20;
 `

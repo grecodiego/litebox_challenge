@@ -1,40 +1,46 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useCallback, useState, useEffect, Fragment } from 'react'
+import { Button } from '../../components/buttons/button'
+import { theme } from '../../themes/colors'
 import { useDropzone } from 'react-dropzone'
 import Clip from '../../assets/images/png/clip.png'
-import { SecondaryButton } from '../../components/buttons/secondaryButton'
+import React, { useCallback, useState, useEffect } from 'react'
 import {
-	StyledInputFile,
-	Text,
+	ButtonProgressBar,
 	ImageIcon,
 	InputFilmName,
-	ProgressBarContainer,
-	ProgressBarRail,
 	ProgressBar,
-	TextProgressBar,
-	ButtonProgressBar,
-	StyledInputFileContainer,
+	ProgressBarContainer,
 	ProgressBarError,
+	ProgressBarRail,
+	StyledInputFile,
+	StyledInputFileContainer,
+	Text,
+	TextProgressBar,
 } from './inputFile.styled'
 
-export function InputFile({ setIsImageFetched }) {
-	const [image, setImage] = useState(null)
-	const [imageOnDrop, setImageOnDrop] = useState(false)
-	const [urlImage, setUrlImage] = useState(null)
+export function InputFile({ isImageFetched, setIsImageFetched }) {
 	const [filmNameInputValue, setFilmNameInputValue] = useState('')
+	const [image, setImage] = useState(null)
+	const [imageLoaded, setImageLoaded] = useState(false)
+	const [imageOnDrop, setImageOnDrop] = useState(false)
 	const [percentage, setPercentage] = useState(0)
 	const [uploadError, setUploadError] = useState(false)
-	const [imageLoaded, setImageLoaded] = useState(false)
+	const [urlImage, setUrlImage] = useState(null)
 
 	useEffect(() => {
-		if (urlImage !== null) {
-			let localStorageData = []
-			if (localStorage.getItem('userMovies') !== null) {
-				localStorageData = JSON.parse(localStorage.getItem('userMovies'))
+		if (urlImage) {
+			const userMovies = JSON.parse(localStorage.getItem('userMovies')) || []
+			const newUserMovies = [
+				{ imageUrl: urlImage, title: filmNameInputValue },
+				...userMovies,
+			]
+			try {
+				localStorage.setItem('userMovies', JSON.stringify(newUserMovies))
+			} catch (err) {
+				alert(err)
+				setUploadError(true)
 			}
-			localStorageData.push({ imageUrl: urlImage, title: filmNameInputValue })
-			let localStorageDataJSON = JSON.stringify(localStorageData)
-			localStorage.setItem('userMovies', localStorageDataJSON)
+			setIsImageFetched(true)
 		}
 	}, [urlImage])
 
@@ -42,7 +48,8 @@ export function InputFile({ setIsImageFetched }) {
 		setImage(acceptedFiles[0])
 		setImageOnDrop(true)
 
-		const formData = new FormData()
+		//Simulating upload progress
+		/* const formData = new FormData()
 		for (const file of acceptedFiles) formData.append('file', file)
 
 		const xhr = new XMLHttpRequest()
@@ -55,10 +62,22 @@ export function InputFile({ setIsImageFetched }) {
 			if (xhr.status !== 200) {
 				setUploadError(true)
 			}
-			setImageLoaded(true)
+
+			console.log('image', image)
 		}
 		xhr.open('POST', 'https://httpbin.org/post', true)
 		xhr.send(formData)
+ */
+		setTimeout(() => {
+			setPercentage(30)
+		}, 100)
+		setTimeout(() => {
+			setPercentage(50)
+		}, 1500)
+		setTimeout(() => {
+			setPercentage(100)
+			setImageLoaded(true)
+		}, 2000)
 	}, [])
 
 	function handleFetchImage() {
@@ -68,18 +87,18 @@ export function InputFile({ setIsImageFetched }) {
 				setUrlImage(reader.result)
 			}
 			reader.readAsDataURL(image)
+			console.log('asdas')
 		} else {
 			alert('error')
 		}
-		setIsImageFetched(true)
 	}
 
 	const {
-		getRootProps,
 		getInputProps,
+		getRootProps,
 		isDragAccept,
-		isDragReject,
 		isDragActive,
+		isDragReject,
 	} = useDropzone({
 		onDrop,
 		accept: {
@@ -88,7 +107,9 @@ export function InputFile({ setIsImageFetched }) {
 		},
 	})
 
-	return isDragActive === false ? (
+	return isDragActive ? (
+		<p>error</p>
+	) : (
 		<StyledInputFileContainer>
 			{imageOnDrop === false ? (
 				<StyledInputFile {...getRootProps()}>
@@ -129,24 +150,22 @@ export function InputFile({ setIsImageFetched }) {
 			)}
 			<InputFilmName
 				border={true}
-				placeholder={'TITULO'}
-				type={'text'}
 				id={'filmNameInput'}
 				name={'filmNameInput'}
 				onChange={(e) => setFilmNameInputValue(e.target.value)}
+				placeholder={'TITULO'}
+				type={'text'}
 			/>
 
-			<SecondaryButton
-				text={'SUBIR PELiCULA'}
-				enable={imageLoaded && filmNameInputValue.length > 0 ? true : false}
-				onClick={
-					imageLoaded === true && filmNameInputValue !== ''
-						? handleFetchImage
-						: null
+			<Button
+				background={theme.secondaryColor}
+				disabled={
+					imageLoaded === true && filmNameInputValue !== '' ? false : true
 				}
+				onClick={handleFetchImage}
+				text={'SUBIR PELiCULA'}
+				textColor={theme.backgroundColor}
 			/>
 		</StyledInputFileContainer>
-	) : (
-		<p>error</p>
 	)
 }

@@ -1,27 +1,18 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const StyledSubTitle = styled.div`
-	display: flex;
-	justify-content: center;
 	align-items: center;
-	flex-direction: row;
-	width: auto;
-`
-export const originDefault = css`
-	color: ${({ theme }) => theme.secondaryColor};
-	letter-spacing: 4px;
-	font-weight: 200;
-`
-
-export const FirstPartOriginTitle = styled.h3`
-	font-family: 'Light';
-	font-size: ${({ size }) => size}px;
-	${originDefault}
-`
-export const SecondPartOriginTitle = styled.h3`
 	display: flex;
+	flex-direction: row;
+	justify-content: center;
 	width: auto;
-	font-family: 'Regular';
+`
+export const Text = styled.p`
+	color: ${({ theme }) => theme.secondaryColor};
+	display: flex;
+	font-family: ${({ fontFamily }) => fontFamily};
 	font-size: ${({ size }) => size}px;
-	${originDefault}
+	font-weight: 200;
+	letter-spacing: 4px;
+	width: auto;
 `

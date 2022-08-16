@@ -1,24 +1,25 @@
 import styled from 'styled-components'
 
 export const StyledOptionContainer = styled.button`
-	display: flex;
 	align-items: center;
-	flex-direction: row;
-	border: none;
-	width: 100%;
-	justify-content: space-between;
-	${({ option, optionChoosen }) =>
-		option.id === optionChoosen.id ? 'height: 100px' : 'height: 60px'};
 	background: ${({ theme }) => theme.backgroundColor};
+	border: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	${({ option, optionChoosen }) =>
+		option.path === optionChoosen ? 'height: 100px' : 'height: 60px'};
 `
+
 export const Option = styled.h3`
 	color: ${({ theme }) => theme.secondaryColor};
 	font-family: ${({ option, optionChoosen }) =>
-		option.id === optionChoosen.id ? 'Regular' : 'Light'};
+		option.path === optionChoosen ? 'Regular' : 'Light'};
+	font-size: 16px;
 	font-style: normal;
 	font-weight: ${({ option, optionChoosen }) =>
-		option.id === optionChoosen.id ? 700 : 400};
-	font-size: 16px;
-	line-height: 16px;
+		option.path === optionChoosen ? 700 : 400};
 	letter-spacing: 4px;
+	line-height: 16px;
 `

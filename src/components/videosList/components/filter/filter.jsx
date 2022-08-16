@@ -25,7 +25,7 @@ export const Filter = ({
 	}
 	return (
 		<>
-			<StyledFilter onClick={() => setDropDownIsOpen(true)}>
+			<StyledFilter onClick={() => setDropDownIsOpen(!dropDownIsOpen)}>
 				<RowContainer>
 					<SubTitle
 						partOne={`VER:`}

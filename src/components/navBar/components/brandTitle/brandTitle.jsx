@@ -1,32 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
+import { Text, TitleContainer } from './brandTitle.styled'
 
-export const BrandTitle = () => {
+export const BrandTitle = ({ mobile }) => {
 	return (
-		<TitleContainer>
-			<FirstTitlePart>LITE</FirstTitlePart>
-			<SecondTitlePart>FLIX</SecondTitlePart>
+		<TitleContainer mobile={mobile}>
+			<Text weigth={`Regular`}>LITE</Text>
+			<Text weigth={`Light`}>FLIX</Text>
 		</TitleContainer>
 	)
 }
-
-const TitleContainer = styled.div`
-	display: flex;
-	flex-direction: row;
-	color: ${({ theme }) => theme.primaryColor};
-	letter-spacing: 4px;
-	text-align: center;
-	font-size: 28px;
-	line-height: 28px;
-`
-const FirstTitlePart = styled.p`
-	font-family: 'Regular';
-	font-style: normal;
-	font-weight: 700;
-`
-const SecondTitlePart = styled.p`
-	display: flex;
-	font-family: 'Light';
-	font-style: normal;
-	font-weight: 700;
-`
