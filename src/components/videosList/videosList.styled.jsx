@@ -10,7 +10,7 @@ export const VideosContainer = styled.div`
 	overflow-y: hidden;
 	height: auto;
 	@media (min-width: 992px) {
-		margin-top: 8%;
+		margin-top: 10%;
 		margin-bottom: 3%;
 		width: 25%;
 		height: auto;
@@ -36,7 +36,6 @@ export const FilmsContainer = styled.div`
 	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: center;
-	align-items: center;
 	height: fit-content;
 	min-height: 50vh;
 	width: 100%;
@@ -44,7 +43,7 @@ export const FilmsContainer = styled.div`
 	padding: 0% 10% 0 10%;
 	@media (min-width: 992px) {
 		height: 100%;
-		justify-content: space-evenly;
+		justify-content: flex-start;
 		margin-top: 0;
 		padding: 0;
 		width: 100%;

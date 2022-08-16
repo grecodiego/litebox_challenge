@@ -9,8 +9,9 @@ export const StyledFilter = styled.button`
 	width: 100%;
 	background-color: transparent;
 	border: none;
+	margin-bottom: 1em;
 	@media (min-width: 992px) {
-		width: fit-content;
+		width: 100%;
 	}
 `
 

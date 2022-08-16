@@ -33,6 +33,7 @@ export const BoxContent = styled.div`
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	margin-bottom: 1em;
 	@media (min-width: 992px) {
 		height: 17vh;
 	}
