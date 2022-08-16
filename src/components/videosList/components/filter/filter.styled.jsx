@@ -40,12 +40,12 @@ export const DropDown = styled.div`
 	justify-content: space-between;
 	flex-direction: column;
 	background: ${({ theme }) => theme.backgroundColor};
-	border: 1px solid rgba(255, 255, 255, 0.5);
 
 	@media (min-width: 992px) {
 		width: 240px;
 		min-height: auto;
 		margin-top: 3%;
+		border: 1px solid rgba(255, 255, 255, 0.5);
 	}
 `
 

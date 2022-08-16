@@ -30,11 +30,9 @@ export const Title = styled.h1`
 	letter-spacing: 4vw;
 	line-height: 100px;
 	margin-top: 16px;
-	padding: 0 10% 36px 10%;
 	text-align: center;
 	text-transform: uppercase;
-	width: 80%;
-
+	width: 100%;
 	animation: apearsTitle 5s;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-in;
@@ -51,6 +49,7 @@ export const Title = styled.h1`
 		text-align: left;
 		margin-top: 0px;
 		padding: 24px 0 32px 0;
+		width: 80%;
 	}
 `
 
