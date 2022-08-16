@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { getAleatoryPopularFilms } from '../../repository/videosListAPI/videosListRepo'
+import {
+	/* getAleatoryPopularFilms */ getPopularFilms,
+} from '../../repository/videosListAPI/videosListRepo'
 import { FilmBox } from './components/filmBox/filmBox'
 import {
 	StyledVideoList,
@@ -20,7 +22,10 @@ export const VideosList = () => {
 		title: 'POPULARES',
 	})
 	useEffect(() => {
-		getAleatoryPopularFilms().then((res) => setFilmsData(res))
+		getPopularFilms().then((res) => setFilmsData(res))
+
+		// try this to get random movies (change the function on repository)
+		//	getAleatoryPopularFilms().then((res) => setFilmsData(res))
 	}, [])
 	useEffect(() => {
 		setLocalData(JSON.parse(localStorage.getItem('userMovies')))
@@ -45,7 +50,7 @@ export const VideosList = () => {
 						<FilmsContainer>
 							{filmsData ? (
 								inView ? (
-									filmsData.slice(-4).map((film, index) => {
+									filmsData.slice(1, 5).map((film, index) => {
 										return (
 											<FilmBox
 												index={index}
