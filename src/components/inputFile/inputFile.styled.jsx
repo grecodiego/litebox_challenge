@@ -4,6 +4,11 @@ export const StyledInputFileContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 24px;
+	@media (min-width: 992px) {
+		align-items: center;
+		width: 100%;
+		justify-content: space-between;
+	}
 `
 
 export const StyledInputFile = styled.div`
@@ -18,6 +23,10 @@ export const StyledInputFile = styled.div`
 	margin-bottom: 20%;
 	margin: 0 24px 0 24px;
 	text-align: center;
+	@media (min-width: 992px) {
+		align-items: center;
+		width: 60%;
+	}
 `
 
 export const ImageIcon = styled.img`
@@ -40,9 +49,9 @@ export const StyledInput = styled.input`
 
 export const InputFilmName = styled.input`
 	background-color: ${({ theme }) => theme.backgroundColor};
-	border-bottom: 1px solid ${({ theme }) => theme.secondaryColor};
 	border-radius: 0;
 	border: none;
+	border-bottom: 1px solid ${({ theme }) => theme.secondaryColor};
 	color: ${({ theme }) => theme.secondaryColor};
 	display: flex;
 	font-family: 'Regular';
@@ -52,7 +61,7 @@ export const InputFilmName = styled.input`
 	letter-spacing: 4px;
 	line-height: 16px;
 	margin-bottom: 10vh;
-	margin: 0 17% 0 17%;
+	margin: 5% 17% 5% 17%;
 	text-align: center;
 	input::placeholder {
 		color: white;
@@ -61,6 +70,10 @@ export const InputFilmName = styled.input`
 	}
 	::placeholder {
 		color: #fafafa;
+	}
+	@media (min-width: 992px) {
+		margin: 5% 0 5% 0;
+		width: 30%;
 	}
 `
 

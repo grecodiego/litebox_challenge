@@ -9,17 +9,17 @@ export const StyledOptionContainer = styled.button`
 	justify-content: space-between;
 	width: 100%;
 	${({ option, optionChoosen }) =>
-		option.id === optionChoosen.id ? 'height: 100px' : 'height: 60px'};
+		option.path === optionChoosen ? 'height: 100px' : 'height: 60px'};
 `
 
 export const Option = styled.h3`
 	color: ${({ theme }) => theme.secondaryColor};
 	font-family: ${({ option, optionChoosen }) =>
-		option.id === optionChoosen.id ? 'Regular' : 'Light'};
+		option.path === optionChoosen ? 'Regular' : 'Light'};
 	font-size: 16px;
 	font-style: normal;
 	font-weight: ${({ option, optionChoosen }) =>
-		option.id === optionChoosen.id ? 700 : 400};
+		option.path === optionChoosen ? 700 : 400};
 	letter-spacing: 4px;
 	line-height: 16px;
 `

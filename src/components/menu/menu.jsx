@@ -1,18 +1,18 @@
 import { menuOptions } from './menuOptions'
 import { OptionContainer } from './components/optionContainer/optionContainer'
 import { StyledMenu } from './menu.styled'
-import { useNavigate } from 'react-router-dom'
-import React, { useState } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
 
 export const Menu = ({ isOpen, closeMenu }) => {
 	const navigate = useNavigate()
-	const [optionChoosen, setOptionChoosen] = useState({
-		id: 1,
-		title: 'INICIO',
-	})
+	const location = useLocation()
+	const [optionChoosen, setOptionChoosen] = useState('/')
+	useEffect(() => {
+		setOptionChoosen(location.pathname)
+	}, [location])
 
 	function handleClickOption(option) {
-		setOptionChoosen(option)
 		closeMenu()
 		navigate(option.path)
 	}

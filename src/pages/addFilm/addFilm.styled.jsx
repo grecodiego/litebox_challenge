@@ -5,7 +5,10 @@ export const StyledAddFilm = styled.div`
 	flex-direction: column;
 	height: 100vh;
 	justify-content: center;
-	justify-content: center;
+	@media (min-width: 992px) {
+		align-items: center;
+		width: 100%;
+	}
 `
 
 export const Title = styled.p`
