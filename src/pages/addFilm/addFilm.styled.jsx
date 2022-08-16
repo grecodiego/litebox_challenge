@@ -5,6 +5,20 @@ export const StyledAddFilm = styled.div`
 	height: 100vh;
 	flex-direction: column;
 	justify-content: center;
+
+	animation: apearText 5s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-out;
+
+	@keyframes apearText {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 100;
+		}
+	}
+
 	@media (min-width: 992px) {
 		width: 100%;
 		align-items: center;
