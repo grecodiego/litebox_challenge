@@ -12,7 +12,7 @@ export const NavContainer = styled.nav`
 	top: 0;
 	width: 100%;
 	z-index: 100;
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		justify-content: flex-start;
 		padding: 35px 5% 0 5%;
 	}
@@ -23,7 +23,7 @@ export const InvisibleContainerForDesktop = styled.button`
 	border: none;
 	display: none;
 	width: 100%;
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		display: flex;
 	}
 `
@@ -31,7 +31,7 @@ export const InvisibleContainerForDesktop = styled.button`
 export const ImageIcon = styled.img`
 	display: none;
 	margin: 0 40px 0 40px;
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		display: flex;
 	}
 `
@@ -59,7 +59,7 @@ export const StyledLink = styled(Link)`
 	margin-left: 52px;
 	min-width: fit-content;
 	padding: 0 12px 0 12px;
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		display: flex;
 	}
 `

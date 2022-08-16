@@ -35,13 +35,13 @@ export const VideosList = () => {
 		case 1:
 			return (
 				<VideosContainer ref={ref}>
-					<Filter
-						dropDownOptionChoosen={dropDownOptionChoosen}
-						setDropDownOptionChoosen={setDropDownOptionChoosen}
-						filtersOptions={filtersOptions}
-					/>
-
 					<StyledVideoList>
+						<Filter
+							dropDownOptionChoosen={dropDownOptionChoosen}
+							setDropDownOptionChoosen={setDropDownOptionChoosen}
+							filtersOptions={filtersOptions}
+						/>
+
 						<FilmsContainer>
 							{filmsData !== null ? (
 								inView === true ? (

@@ -16,7 +16,7 @@ export const StyledFilmBox = styled.div`
 			margin-left: 0%;
 		}
 	}
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		margin-bottom: 0%;
 	}
 `
@@ -24,7 +24,8 @@ export const StyledFilmBox = styled.div`
 export const BoxContent = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: ${({ isClicked }) =>
+		isClicked === true ? `flex-end` : `center`};
 	align-items: center;
 	width: 100%;
 	height: 26vh;
@@ -32,9 +33,8 @@ export const BoxContent = styled.div`
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		height: 17vh;
-		width: 100%;
 	}
 `
 
@@ -61,7 +61,7 @@ export const PlayCircle = styled.svg`
 			stroke: black;
 		}
 	}
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		height: 40px;
 		width: 40px;
 	}
@@ -85,6 +85,7 @@ export const MiniPlayCircle = styled.svg`
 `
 
 export const FilmTitle = styled.h2`
+	display: flex;
 	font-family: 'Regular';
 	justify-content: center;
 	padding-top: 3px;
@@ -94,12 +95,14 @@ export const FilmTitle = styled.h2`
 	font-weight: 400;
 	text-align: center;
 	margin-top: 2px;
+	@media (min-width: 992px) {
+		width: auto;
+	}
 `
 
 export const FilmTitleClicked = styled.h2`
 	font-family: 'Regular';
 	justify-content: center;
-	padding-top: 3px;
 	font-size: 12px;
 	color: ${({ theme }) => theme.secondaryColor};
 	letter-spacing: 4px;
@@ -107,22 +110,8 @@ export const FilmTitleClicked = styled.h2`
 	text-align: center;
 	margin-top: 4px;
 	padding-left: 12px;
-`
-
-export const BoxContentClicked = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: fl;
-	width: 100%;
-	height: 45vw;
-	background-image: url(${({ src }) => src});
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	@media (min-width: 768px) {
-		height: 17vh;
-		width: 100%;
+	@media (min-width: 992px) {
+		max-width: 200px;
 	}
 `
 
@@ -137,6 +126,7 @@ export const RowContainerTop = styled.div`
 export const RowContainerBottom = styled.div`
 	display: flex;
 	flex-direction: row;
+	width: 100%;
 	justify-content: space-between;
 	align-items: center;
 	padding: 16px 16px 16px 16px;

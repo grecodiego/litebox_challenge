@@ -6,7 +6,7 @@ export const StyledBackgroundContainer = styled.div`
 	display: flex;
 	height: 585px;
 	width: 100%;
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		height: 100%;
 		position: fixed;
 	}
@@ -35,7 +35,7 @@ export const ImageContainer = styled.div`
 		`
 			background-image: url(${props.backgroundImage});
 		`}
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		animation-timing-function: ease-in-out;
 		height: auto;
 		@keyframes down-image {
@@ -69,7 +69,7 @@ export const BackgroundAnimation = styled.div`
 			background-color: none;
 		}
 	}
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		height: 100%;
 		position: relative;
 	}
@@ -85,7 +85,7 @@ export const GradientBackground = styled.div`
 	height: 193px;
 	margin-bottom: -1%;
 	width: 100%;
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		display: none;
 	}
 `

@@ -10,10 +10,10 @@ export const TitleContainer = styled.div`
 	text-align: center;
 	${({ mobile }) =>
 		mobile === true
-			? `@media (max-width: 768px) {
+			? `@media (max-width: 992px) {
 		display: flex;
 	}`
-			: `@media (min-width: 768px) {
+			: `@media (min-width: 992px) {
 		display: flex;
 	}`}
 `

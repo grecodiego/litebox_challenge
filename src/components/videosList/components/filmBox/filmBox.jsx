@@ -43,7 +43,7 @@ export const FilmBox = ({ src, title, index, voteAverage, date }) => {
 					</BoxSize>
 				</BoxContent>
 			) : (
-				<BoxContentClicked src={src} isClicked={isClicked}>
+				<BoxContent src={src} isClicked={isClicked}>
 					<RowContainerTop>
 						<MiniPlayCircle
 							height={24}
@@ -73,7 +73,7 @@ export const FilmBox = ({ src, title, index, voteAverage, date }) => {
 							</>
 						) : null}
 					</RowContainerBottom>
-				</BoxContentClicked>
+				</BoxContent>
 			)}
 		</StyledFilmBox>
 	)

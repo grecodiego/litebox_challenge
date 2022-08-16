@@ -12,7 +12,7 @@ export const StyledButton = styled.button`
 	background-color: ${({ background }) => background};
 	border: ${({ border }) =>
 		border === true ? '1px solid rgba(255, 255, 255, 0.5);' : 'none'};
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		margin: 0;
 		width: 248px;
 	}
