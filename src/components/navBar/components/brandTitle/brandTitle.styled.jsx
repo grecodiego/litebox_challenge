@@ -8,21 +8,19 @@ export const TitleContainer = styled.div`
 	text-align: center;
 	font-size: 28px;
 	line-height: 28px;
-
-	@media (min-width: 768px) {
+	${({ mobile }) =>
+		mobile === true
+			? `@media (max-width: 768px) {
 		display: flex;
-	}
+	}`
+			: `@media (min-width: 768px) {
+		display: flex;
+	}`}
 `
 
-export const FirstTitlePart = styled.p`
-	font-family: 'Regular';
+export const Text = styled.p`
+	font-family: ${({ weigth }) => weigth};
 	font-style: normal;
 	font-weight: 700;
-`
-
-export const SecondTitlePart = styled.p`
-	display: flex;
-	font-family: 'Light';
-	font-style: normal;
-	font-weight: 700;
+	margin-top: 2px;
 `

@@ -27,14 +27,20 @@ export const DropDown = styled.div`
 		dropDownIsOpen === true ? 'flex' : 'none'};
 	position: absolute;
 	flex-direction: column;
+	z-index: 120;
 	min-height: 100px;
 	align-items: center;
 	justify-content: space-between;
-	width: 100%;
-	margin-top: 5%;
+	width: 70%;
 	padding: 24px;
+	margin-top: 5%;
 	background: ${({ theme }) => theme.backgroundColor};
 	border: 1px solid rgba(255, 255, 255, 0.5);
+	@media (min-width: 768px) {
+		min-height: auto;
+		width: 240px;
+		margin-top: 3%;
+	}
 `
 
 export const OptionContainer = styled.button`

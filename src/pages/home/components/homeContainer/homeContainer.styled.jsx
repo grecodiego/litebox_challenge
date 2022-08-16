@@ -22,7 +22,6 @@ export const StyledHomeContainer = styled.div`
 
 export const Title = styled.h1`
 	color: ${({ theme }) => theme.primaryColor};
-
 	font-family: 'Regular';
 	font-size: 76px;
 	line-height: 78px;
@@ -57,6 +56,7 @@ export const SubContainer = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	@media (min-width: 768px) {
+		width: 70%;
 		justify-content: flex-end;
 		align-items: flex-start;
 	}

@@ -7,8 +7,7 @@ import {
 } from './navBar.styled'
 import { UserAvatar } from './components/userAvatar/userAvatar'
 import { MenuButton } from './components/menuButton/menuButton.jsx'
-import { BrandTitleDesktop } from './components/brandTitleDesktop/brandTitleDesktop'
-import { BrandTitleMobile } from './components/brandTitleMobile/brandTitleMobile'
+import { BrandTitle } from './components/brandTitle/brandTitle'
 import { Menu } from '../menu/menu'
 import React, { useState } from 'react'
 import Bell from '../../assets/images/png/bell.png'
@@ -31,14 +30,16 @@ export function NavBar() {
 		<>
 			<Menu isOpen={isOpen} closeMenu={closeMenu} />
 			<NavContainer>
-				<BrandTitleDesktop />
+				<BrandTitle mobile={false} />
+
 				<StyledLink to={'/add-film'}>
 					<ImageIconPlus src={Plus} />
 					AGREGÁR PELICULA
 				</StyledLink>
 				<InvisibleContainerForDesktop />
 				<MenuButton isOpen={isOpen} closeMenu={closeMenu} />
-				<BrandTitleMobile />
+				<BrandTitle mobile={true} />
+
 				<ImageIcon src={Bell} />
 				<UserAvatar />
 			</NavContainer>

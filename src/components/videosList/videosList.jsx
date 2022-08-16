@@ -34,7 +34,7 @@ export const VideosList = () => {
 	switch (dropDownOptionChoosen.id) {
 		case 1:
 			return (
-				<VideosContainer>
+				<VideosContainer ref={ref}>
 					<Filter
 						dropDownOptionChoosen={dropDownOptionChoosen}
 						setDropDownOptionChoosen={setDropDownOptionChoosen}
@@ -42,12 +42,13 @@ export const VideosList = () => {
 					/>
 
 					<StyledVideoList>
-						<FilmsContainer ref={ref}>
+						<FilmsContainer>
 							{filmsData !== null ? (
 								inView === true ? (
-									filmsData.slice(-4).map((film) => {
+									filmsData.slice(-4).map((film, index) => {
 										return (
 											<FilmBox
+												index={index}
 												key={film.id}
 												title={film.title}
 												voteAverage={film.vote_average}
@@ -84,7 +85,7 @@ export const VideosList = () => {
 						<FilmsContainer ref={ref}>
 							{localData !== null ? (
 								inView === true ? (
-									localData.slice(-4).map((film, index) => {
+									localData.slice(0, 4).map((film, index) => {
 										return (
 											<FilmBox
 												key={index}

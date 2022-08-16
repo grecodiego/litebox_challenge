@@ -1,12 +1,13 @@
 import styled, { css } from 'styled-components'
 
-const defaultButton = css`
+const StyledButton = css`
 	display: flex;
 	text-align: center;
 	justify-content: center;
 	align-items: center;
 	height: 56px;
 	margin: 0 17% 0 17%;
+	color: ${({ theme }) => theme.secondaryColor};
 	@media (min-width: 768px) {
 		margin: 0;
 		width: 248px;
@@ -14,19 +15,19 @@ const defaultButton = css`
 `
 
 export const PrimaryStyledButton = styled.button`
-	${defaultButton};
-	color: ${({ theme }) => theme.secondaryColor};
+	${StyledButton};
 	background-color: ${({ theme }) => theme.backgroundColor};
 	border: ${({ border }) =>
 		border === true ? '1px solid rgba(255, 255, 255, 0.5);' : 'none'};
 `
+
 export const SecondaryStyledButton = styled.button`
-	${defaultButton};
-	color: ${({ theme }) => theme.secondaryColor};
+	${StyledButton};
 	border: none;
 	background-color: ${({ enable }) =>
 		enable === true ? '#FFFFFF' : '#919191'};
 `
+
 export const ImageIcon = styled.img`
 	margin-right: 12px;
 `

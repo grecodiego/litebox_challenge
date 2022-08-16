@@ -12,7 +12,7 @@ export const VideosContainer = styled.div`
 	@media (min-width: 768px) {
 		margin-top: 10%;
 		margin-bottom: 3%;
-		width: 220px;
+		width: 30%;
 		height: auto;
 	}
 `
@@ -40,10 +40,10 @@ export const FilmsContainer = styled.div`
 	margin-top: 7%;
 	padding: 0% 10% 0 10%;
 	@media (min-width: 768px) {
+		width: 100%;
 		height: 100%;
-		padding: 0;
 		margin-top: 0;
-		justify-content: space-around;
+		justify-content: space-evenly;
 	}
 `
 

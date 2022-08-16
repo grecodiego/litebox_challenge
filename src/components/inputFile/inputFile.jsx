@@ -27,23 +27,23 @@ export function InputFile({ setIsImageFetched }) {
 	const [imageLoaded, setImageLoaded] = useState(false)
 
 	useEffect(() => {
-		console.log(urlImage)
-		if (urlImage !== null) {
-			console.log('estoy aca3')
-			let localStorageData = []
-			if (localStorage.getItem('userMovies') !== null) {
-				localStorageData = JSON.parse(localStorage.getItem('userMovies'))
+		if (urlImage) {
+			const userMovies = JSON.parse(localStorage.getItem('userMovies')) || []
+			const newUserMovies = [
+				{ imageUrl: urlImage, title: filmNameInputValue },
+				...userMovies,
+			]
+			try {
+				localStorage.setItem('userMovies', JSON.stringify(newUserMovies))
+			} catch (err) {
+				alert(err)
+				setUploadError(true)
 			}
-			localStorage.clear()
-			localStorageData.push({ imageUrl: urlImage, title: filmNameInputValue })
-			let localStorageDataJSON = JSON.stringify(localStorageData)
-			localStorage.setItem('userMovies', localStorageDataJSON)
 			setIsImageFetched(true)
 		}
 	}, [urlImage])
 
 	const onDrop = useCallback((acceptedFiles) => {
-		console.log('acceptedFiles', acceptedFiles)
 		setImage(acceptedFiles[0])
 		setImageOnDrop(true)
 
@@ -66,26 +66,24 @@ export function InputFile({ setIsImageFetched }) {
 		}
 		xhr.open('POST', 'https://httpbin.org/post', true)
 		xhr.send(formData)
- */ setTimeout(() => {
+ */
+		setTimeout(() => {
 			setPercentage(30)
 		}, 100)
 		setTimeout(() => {
 			setPercentage(50)
 		}, 1500)
 		setTimeout(() => {
-			console.log('image', image)
 			setPercentage(100)
 			setImageLoaded(true)
 		}, 2000)
 	}, [])
 
 	function handleFetchImage() {
-		console.log(image, 'image2')
 		if (image) {
 			const reader = new FileReader()
 			reader.onloadend = () => {
 				setUrlImage(reader.result)
-				console.log('reader.result', reader.result)
 			}
 			reader.readAsDataURL(image)
 		} else {
@@ -107,7 +105,9 @@ export function InputFile({ setIsImageFetched }) {
 		},
 	})
 
-	return isDragActive === false ? (
+	return isDragActive ? (
+		<p>error</p>
+	) : (
 		<StyledInputFileContainer>
 			{imageOnDrop === false ? (
 				<StyledInputFile {...getRootProps()}>
@@ -165,7 +165,5 @@ export function InputFile({ setIsImageFetched }) {
 				}
 			/>
 		</StyledInputFileContainer>
-	) : (
-		<p>error</p>
 	)
 }
