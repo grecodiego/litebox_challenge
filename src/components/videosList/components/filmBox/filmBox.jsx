@@ -7,7 +7,6 @@ import {
 	BoxSize,
 	VoteAndStarContainer,
 	TextBottom,
-	BoxContentClicked,
 	RowContainerBottom,
 	RowContainerTop,
 	FilmTitleClicked,
