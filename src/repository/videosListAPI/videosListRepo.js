@@ -1,6 +1,15 @@
 import { fetchFilmsData } from './videosListAPI'
 
-function getRandomInt(minN, maxN) {
+export async function getPopularFilms() {
+	let popularFilms = await fetchFilmsData({
+		page: 1,
+	})
+	return popularFilms
+}
+
+// use this for get random movies
+
+/* function getRandomInt(minN, maxN) {
 	let min = Math.ceil(minN)
 	let max = Math.floor(maxN)
 	return Math.floor(Math.random() * (max - min) + min)
@@ -12,3 +21,4 @@ export async function getAleatoryPopularFilms() {
 	})
 	return aleatoryFilmsArray
 }
+ */
