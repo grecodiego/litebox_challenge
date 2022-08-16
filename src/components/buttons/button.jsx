@@ -9,6 +9,7 @@ export const Button = ({
 	onClick = () => {},
 	text,
 	textColor,
+	effect = true,
 }) => {
 	return (
 		<StyledButton
@@ -18,9 +19,10 @@ export const Button = ({
 			image={image}
 			onClick={onClick}
 			textColor={textColor || theme.secondaryColor}
+			effect={effect}
 		>
 			{image ? <ImageIcon src={image} /> : null}
-			<Text>{text}</Text>
+			<Text effect={effect}>{text}</Text>
 		</StyledButton>
 	)
 }
