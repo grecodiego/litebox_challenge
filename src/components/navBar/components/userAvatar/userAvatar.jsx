@@ -1,5 +1,5 @@
 import defaultAvatar from '../../../../assets/images/png/defaultuserimage.png'
-import styled from 'styled-components'
+import { Image } from './userAvatar.styled'
 
 export const UserAvatar = () => {
 	return (
@@ -10,14 +10,3 @@ export const UserAvatar = () => {
 		></Image>
 	)
 }
-
-const Image = styled.img`
-	width: 36px;
-	height: 36px;
-	border-radius: 50%;
-	display: flex;
-	vertical-align: middle;
-	background-color: green;
-	object-fit: cover;
-	object-position: center;
-`

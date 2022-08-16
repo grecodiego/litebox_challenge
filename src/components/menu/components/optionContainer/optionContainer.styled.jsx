@@ -1,24 +1,25 @@
 import styled from 'styled-components'
 
 export const StyledOptionContainer = styled.button`
-	display: flex;
 	align-items: center;
-	flex-direction: row;
+	background: ${({ theme }) => theme.backgroundColor};
 	border: none;
-	width: 100%;
+	display: flex;
+	flex-direction: row;
 	justify-content: space-between;
+	width: 100%;
 	${({ option, optionChoosen }) =>
 		option.id === optionChoosen.id ? 'height: 100px' : 'height: 60px'};
-	background: ${({ theme }) => theme.backgroundColor};
 `
+
 export const Option = styled.h3`
 	color: ${({ theme }) => theme.secondaryColor};
 	font-family: ${({ option, optionChoosen }) =>
 		option.id === optionChoosen.id ? 'Regular' : 'Light'};
+	font-size: 16px;
 	font-style: normal;
 	font-weight: ${({ option, optionChoosen }) =>
 		option.id === optionChoosen.id ? 700 : 400};
-	font-size: 16px;
-	line-height: 16px;
 	letter-spacing: 4px;
+	line-height: 16px;
 `

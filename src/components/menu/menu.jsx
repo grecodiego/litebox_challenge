@@ -1,8 +1,8 @@
-import { StyledMenu } from './menu.styled'
-import { OptionContainer } from './components/optionContainer/optionContainer'
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { menuOptions } from './menuOptions'
+import { OptionContainer } from './components/optionContainer/optionContainer'
+import { StyledMenu } from './menu.styled'
+import { useNavigate } from 'react-router-dom'
+import React, { useState } from 'react'
 
 export const Menu = ({ isOpen, closeMenu }) => {
 	const navigate = useNavigate()
@@ -22,10 +22,10 @@ export const Menu = ({ isOpen, closeMenu }) => {
 			{menuOptions.map((option) => {
 				return (
 					<OptionContainer
+						handleClickOption={handleClickOption}
 						key={option.id}
 						option={option}
 						optionChoosen={optionChoosen}
-						handleClickOption={handleClickOption}
 					/>
 				)
 			})}

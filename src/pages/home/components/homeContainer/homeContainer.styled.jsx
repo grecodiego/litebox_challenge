@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 export const StyledHomeContainer = styled.div`
-	display: flex;
-	position: relative;
-	margin-top: -220px;
-	flex-direction: column;
 	background-color: transparent;
+	display: flex;
+	flex-direction: column;
 	height: auto;
+	margin-top: -220px;
+	position: relative;
 	width: 100%;
 	@media (min-width: 768px) {
 		position: fixed;
@@ -24,12 +24,12 @@ export const Title = styled.h1`
 	color: ${({ theme }) => theme.primaryColor};
 	font-family: 'Regular';
 	font-size: 76px;
-	line-height: 78px;
 	font-style: normal;
 	font-weight: 300;
-	margin-top: 16px;
 	justify-content: center;
 	letter-spacing: 4vw;
+	line-height: 78px;
+	margin-top: 16px;
 	padding: 0 10% 36px 10%;
 	text-align: center;
 	text-transform: uppercase;
@@ -44,13 +44,14 @@ export const Title = styled.h1`
 export const ButtonsContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	height: 136px;
+	justify-content: space-between;
 	@media (min-width: 768px) {
 		flex-direction: row;
 		width: 520px;
 	}
 `
+
 export const SubContainer = styled.div`
 	display: flex;
 	flex-direction: column;

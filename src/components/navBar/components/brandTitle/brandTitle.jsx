@@ -1,5 +1,5 @@
 import React from 'react'
-import { TitleContainer, Text } from './brandTitle.styled'
+import { Text, TitleContainer } from './brandTitle.styled'
 
 export const BrandTitle = ({ mobile }) => {
 	return (

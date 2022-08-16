@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
 export const TitleContainer = styled.div`
+	color: ${({ theme }) => theme.primaryColor};
 	display: none;
 	flex-direction: row;
-	color: ${({ theme }) => theme.primaryColor};
-	letter-spacing: 4px;
-	text-align: center;
 	font-size: 28px;
+	letter-spacing: 4px;
 	line-height: 28px;
+	text-align: center;
 	${({ mobile }) =>
 		mobile === true
 			? `@media (max-width: 768px) {
