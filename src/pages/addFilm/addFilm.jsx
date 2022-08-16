@@ -9,8 +9,8 @@ import {
 	Text,
 	TextContainer,
 } from './addFilm.styled'
-import { PrimaryButton } from '../../components/buttons/primaryButton'
-import { SecondaryButton } from '../../components/buttons/secondaryButton'
+import { Button } from '../../components/buttons/button'
+import { theme } from '../../themes/colors'
 
 export const AddFilm = () => {
 	const navigate = useNavigate()
@@ -23,11 +23,7 @@ export const AddFilm = () => {
 					<StyledAddFilm>
 						<Title>AGREGAR PELICULA</Title>
 						<InputFile setIsImageFetched={setIsImageFetched} />
-						<PrimaryButton
-							text={'SALIR'}
-							onClick={() => navigate(-1)}
-							border={true}
-						/>
+						<Button border={true} onClick={() => navigate(-1)} text={'SALIR'} />
 					</StyledAddFilm>
 				) : (
 					<StyledAddFilm>
@@ -35,10 +31,12 @@ export const AddFilm = () => {
 							<CongratzText>¡FELICITACIONES!</CongratzText>
 							<Text>LITEFLIX THE MOVIE FUE CORRECTAMENTE SUBIDA.</Text>
 						</TextContainer>
-						<SecondaryButton
-							text={'IR A HOME'}
-							enable={true}
+						<Button
+							background={theme.secondaryColor}
+							disabled={!isImageFetched}
 							onClick={() => navigate(-1)}
+							text={'IR A HOME'}
+							textColor={theme.backgroundColor}
 						/>
 					</StyledAddFilm>
 				)}

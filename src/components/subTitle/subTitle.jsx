@@ -1,16 +1,16 @@
-import {
-	StyledSubTitle,
-	FirstPartOriginTitle,
-	SecondPartOriginTitle,
-} from './subTitle.styled'
+import { StyledSubTitle, Text } from './subTitle.styled'
 
 export const SubTitle = ({ partOne, partTwo, size }) => {
 	return (
 		<>
 			<StyledSubTitle>
-				<FirstPartOriginTitle size={size}>{partOne}</FirstPartOriginTitle>
+				<Text fontFamily={'Light'} size={size}>
+					{partOne}
+				</Text>
 				&nbsp;&nbsp;
-				<SecondPartOriginTitle size={size}>{partTwo}</SecondPartOriginTitle>
+				<Text fontFamily={'Regular'} size={size}>
+					{partTwo}
+				</Text>
 			</StyledSubTitle>
 		</>
 	)

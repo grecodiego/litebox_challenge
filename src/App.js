@@ -1,9 +1,9 @@
+import { AddFilm } from './pages/addFilm/addFilm'
 import { GlobalStyles } from './globalstyles'
-import { theme } from './themes/colors'
-import { ThemeProvider } from 'styled-components'
 import { Home } from './pages/home/home'
 import { Route, Routes } from 'react-router-dom'
-import { AddFilm } from './pages/addFilm/addFilm'
+import { theme } from './themes/colors'
+import { ThemeProvider } from 'styled-components'
 
 function App() {
 	return (

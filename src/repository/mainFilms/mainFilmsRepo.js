@@ -9,6 +9,8 @@ function getRandomInt(minN, maxN) {
 
 export async function getFilmData() {
 	let aleatoryFilmsArray = await fetchFilmsData()
-	let aleatoryFilm = aleatoryFilmsArray[getRandomInt(0, 7)]
+	let aleatoryFilm = aleatoryFilmsArray[getRandomInt(0, 7)] // if want the most popular film, just delete 'getRandomInt(0, 7)' and put '0'
 	return aleatoryFilm
 }
+
+//I think is more fun the app with aleatory background films..
