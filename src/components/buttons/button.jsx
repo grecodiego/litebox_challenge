@@ -4,7 +4,7 @@ import { theme } from '../../themes/colors'
 export const Button = ({
 	background,
 	border = false,
-	disabled = true,
+	disabled = false,
 	image,
 	onClick = () => {},
 	text,
