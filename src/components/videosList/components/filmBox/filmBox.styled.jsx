@@ -26,7 +26,7 @@ export const StyledFilmBox = styled.div`
 export const BoxContent = styled.div`
 	display: flex;
 	width: 100%;
-	height: 26vh;
+	height: 25vh;
 	align-items: center;
 	margin-bottom: 1em;
 	flex-direction: column;
@@ -36,6 +36,11 @@ export const BoxContent = styled.div`
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+
+	@media (min-width: 660px) and (max-width: 992px) {
+		height: 40vh;
+	}
+
 	@media (min-width: 992px) {
 		height: 17vh;
 	}
