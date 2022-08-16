@@ -14,10 +14,9 @@ export const StyledBackgroundContainer = styled.div`
 
 export const ImageContainer = styled.div`
 	align-items: flex-end;
-	animation-duration: 4s;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-out;
-	animation: down-image;
+	animation: down-image 4s;
 	background-position: center;
 	background-size: cover;
 	display: flex;
