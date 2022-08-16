@@ -58,6 +58,7 @@ export const OptionContainer = styled.button`
 	border: none;
 	background: ${({ theme }) => theme.backgroundColor};
 `
+
 export const Option = styled.h3`
 	font-family: 'Regular';
 	font-style: normal;
@@ -67,8 +68,23 @@ export const Option = styled.h3`
 	line-height: 16px;
 	letter-spacing: 4px;
 `
+
 export const Checked = styled.img`
 	display: ${({ option, dropDownOptionChoosen }) =>
 		option.id === dropDownOptionChoosen.id ? 'flex' : 'none'};
 	width: fit-content;
+`
+
+export const Diamond = styled.div`
+	background-color: ${({ theme }) => theme.backgroundColor};
+	display: none;
+	height: 12px;
+	position: absolute;
+	right: 36px;
+	top: -6px;
+	transform: rotate(45deg);
+	width: 12px;
+	@media (min-width: 992px) {
+		display: flex;
+	}
 `
