@@ -113,13 +113,13 @@ export const FilmTitle = styled.h2`
 export const FilmTitleClicked = styled.h2`
 	margin-top: 4px;
 	padding-left: 12px;
+	padding-top: 3px;
 	justify-content: center;
 	font-family: 'Regular';
 	font-size: 12px;
 	color: ${({ theme }) => theme.secondaryColor};
 	letter-spacing: 4px;
 	font-weight: 400;
-	text-align: center;
 
 	@media (min-width: 992px) {
 		max-width: 200px;
@@ -128,6 +128,7 @@ export const FilmTitleClicked = styled.h2`
 
 export const RowContainerTop = styled.div`
 	display: flex;
+	width: 100%;
 	padding: 16px 16px 16px 16px;
 	flex-direction: row;
 	justify-content: flex-start;
