@@ -11,7 +11,7 @@ export const VideosContainer = styled.div`
 	overflow-y: hidden;
 
 	@media (min-width: 992px) {
-		margin-top: 10%;
+		margin-top: 8%;
 		margin-bottom: 3%;
 		width: 25%;
 		height: auto;
