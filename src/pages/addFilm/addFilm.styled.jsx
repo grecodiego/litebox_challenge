@@ -6,7 +6,7 @@ export const StyledAddFilm = styled.div`
 	flex-direction: column;
 	justify-content: center;
 
-	animation: apearText 3s;
+	animation: apearText 5s;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-out;
 

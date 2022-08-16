@@ -22,18 +22,31 @@ export const StyledHomeContainer = styled.div`
 
 export const Title = styled.h1`
 	color: ${({ theme }) => theme.primaryColor};
-	font-family: 'Regular';
+	font-family: 'Bold';
 	font-size: 76px;
 	font-style: normal;
-	font-weight: 300;
+	font-weight: 900;
 	justify-content: center;
 	letter-spacing: 4vw;
-	line-height: 78px;
+	line-height: 100px;
 	margin-top: 16px;
 	padding: 0 10% 36px 10%;
 	text-align: center;
 	text-transform: uppercase;
-	width: 100%;
+	width: 80%;
+
+	animation: apearsTitle 5s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in;
+
+	@keyframes apearsTitle {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 100;
+		}
+	}
 	@media (min-width: 992px) {
 		text-align: left;
 		margin-top: 0px;
@@ -46,6 +59,7 @@ export const ButtonsContainer = styled.div`
 	flex-direction: column;
 	height: 136px;
 	justify-content: space-between;
+
 	@media (min-width: 992px) {
 		flex-direction: row;
 		width: 520px;

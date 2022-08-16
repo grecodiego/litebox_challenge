@@ -21,7 +21,7 @@ export const ImageContainer = styled.div`
 	background-size: cover;
 	justify-content: center;
 	align-items: flex-end;
-	animation: down-image 4s;
+	animation: down-image 5s;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-out;
 
@@ -61,7 +61,7 @@ export const BackgroundAnimation = styled.div`
 	width: 100%;
 	background-position: center;
 	background-size: cover;
-	animation: pulses 6s;
+	animation: pulses 5s;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-in-out;
 

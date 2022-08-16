@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
-import regular from './fonts/BebasNeue-Regular.ttf'
+import Regular from './fonts/BebasNeue-Regular.ttf'
 import Light from './fonts/BebasNeue-Light.ttf'
+import Bold from './fonts/BebasNeue-Bold.ttf'
 
 export const GlobalStyles = createGlobalStyle`
 * {
@@ -28,7 +29,7 @@ body {
 @font-face {
 	font-family: 'Regular';
 	src: local('Bebas Neue Regular'),
-		url(${regular}) format('truetype');
+		url(${Regular}) format('truetype');
 		font-display: auto; 
 }
 
@@ -36,6 +37,13 @@ body {
 	font-family: 'Light'; 
 	src: local('Bebas Neue Light'),
 		url(${Light}) format('truetype');
+		font-display: auto; 
+}
+
+@font-face {
+	font-family: 'Bold'; 
+	src: local('Bebas Neue Bold'),
+		url(${Bold}) format('truetype');
 		font-display: auto; 
 }
 `

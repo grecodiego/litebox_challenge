@@ -13,13 +13,14 @@ export const StyledButton = styled.button`
 	opacity: ${({ disabled }) => (disabled === false ? '100%' : '50%')};
 	text-align: center;
 
-	animation: apears 2s;
+	animation: apearButtons 5s;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-in;
 
 	@keyframes apearButtons {
 		0% {
 			opacity: 0;
+			background-color: transparent;
 		}
 		100% {
 			opacity: 100;
@@ -45,9 +46,9 @@ export const Text = styled.p`
 	font-family: 'Regular';
 	color: ${({ textColor }) => textColor};
 
-	animation: apearText 3s;
+	animation: apearText 5s;
 	animation-fill-mode: forwards;
-	animation-timing-function: ease-out;
+	animation-timing-function: ease-in-out;
 
 	@keyframes apearText {
 		0% {
