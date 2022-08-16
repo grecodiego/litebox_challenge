@@ -24,7 +24,6 @@ export const StyledInputFile = styled.div`
 	color: ${({ theme }) => theme.secondaryColor};
 	background-color: ${({ theme }) => theme.backgroundColor};
 	border: 1px dashed ${({ theme }) => theme.secondaryColor};
-
 	@media (min-width: 992px) {
 		align-items: center;
 		width: 60%;
@@ -71,6 +70,16 @@ export const InputFilmName = styled.input`
 	}
 	::placeholder {
 		color: #fafafa;
+	}
+	:active {
+		outline: none;
+		background-color: none;
+		border-bottom: 1px solid ${({ theme }) => theme.secondaryColor};
+	}
+	:focus {
+		outline: none;
+		background-color: none;
+		border-bottom: 1px solid ${({ theme }) => theme.secondaryColor};
 	}
 
 	@media (min-width: 992px) {

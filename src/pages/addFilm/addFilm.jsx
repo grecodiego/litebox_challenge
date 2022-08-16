@@ -37,6 +37,7 @@ export const AddFilm = () => {
 							onClick={() => navigate(-1)}
 							text={'IR A HOME'}
 							textColor={theme.backgroundColor}
+							effect={false}
 						/>
 					</StyledAddFilm>
 				)}

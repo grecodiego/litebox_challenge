@@ -13,19 +13,22 @@ export const StyledButton = styled.button`
 	opacity: ${({ disabled }) => (disabled === false ? '100%' : '50%')};
 	text-align: center;
 
-	animation: apearButtons 5s;
+	${({ effect }) =>
+		effect === true
+			? `	animation: apearButtons 5s;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-in;
-
 	@keyframes apearButtons {
 		0% {
 			opacity: 0;
 			background-color: transparent;
 		}
 		100% {
-			opacity: 100;
+			opacity: ${({ disabled }) => (disabled === false ? '100%' : '50%')};
 		}
-	}
+	}`
+			: ''}
+
 	@media (min-width: 992px) {
 		width: 248px;
 		margin: 0;
@@ -46,16 +49,18 @@ export const Text = styled.p`
 	font-family: 'Regular';
 	color: ${({ textColor }) => textColor};
 
-	animation: apearText 5s;
+	${({ effect }) =>
+		effect === true
+			? `	animation: apearText 5s;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-in-out;
-
-	@keyframes apearText {
+			@keyframes apearText {
 		0% {
 			opacity: 0;
 		}
 		100% {
 			opacity: 100;
 		}
-	}
+	}`
+			: ''}
 `
