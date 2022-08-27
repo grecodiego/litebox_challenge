@@ -4,6 +4,7 @@ import {
 	ImageContainer,
 	StyledBackgroundContainer,
 } from './backgroundContainer.styled'
+
 export const BackgroundContainer = ({ filmImage }) => {
 	const backgroundImage = `https://image.tmdb.org/t/p/w1280/${filmImage}`
 

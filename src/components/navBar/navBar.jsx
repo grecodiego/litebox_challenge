@@ -16,16 +16,10 @@ import React, { useState } from 'react'
 
 export function NavBar() {
 	const [isOpen, setIsOpen] = useState(false)
-	const body = document.querySelector('body')
 	const location = useLocation()
 
 	function closeMenu() {
 		setIsOpen(!isOpen)
-		if (isOpen === false) {
-			body.style.position = 'fixed'
-		} else {
-			body.style.position = 'static'
-		}
 	}
 	return (
 		<>
