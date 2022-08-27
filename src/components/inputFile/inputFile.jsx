@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { Button } from '../../components/buttons/button'
 import { theme } from '../../themes/colors'
 import { useDropzone } from 'react-dropzone'
@@ -18,7 +17,7 @@ import {
 	TextProgressBar,
 } from './inputFile.styled'
 
-export function InputFile({ isImageFetched, setIsImageFetched }) {
+export function InputFile({ setIsImageFetched }) {
 	const [filmNameInputValue, setFilmNameInputValue] = useState('')
 	const [image, setImage] = useState(null)
 	const [imageLoaded, setImageLoaded] = useState(false)

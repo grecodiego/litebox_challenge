@@ -13,6 +13,7 @@ import { UserAvatar } from './components/userAvatar/userAvatar'
 import Bell from '../../assets/images/png/bell.png'
 import Plus from '../../assets/images/png/plus.png'
 import React, { useState } from 'react'
+import { Fragment } from 'react'
 
 export function NavBar() {
 	const [isOpen, setIsOpen] = useState(false)
@@ -22,8 +23,8 @@ export function NavBar() {
 		setIsOpen(!isOpen)
 	}
 	return (
-		<>
-			<Menu closeMenu={closeMenu} isOpen={isOpen} />
+		<Fragment>
+			<Menu closeMenu={closeMenu} />
 			<NavContainer>
 				<BrandTitle mobile={false} />
 				{location.pathname === '/add-film' ? null : (
@@ -38,6 +39,6 @@ export function NavBar() {
 				<ImageIcon src={Bell} />
 				<UserAvatar />
 			</NavContainer>
-		</>
+		</Fragment>
 	)
 }

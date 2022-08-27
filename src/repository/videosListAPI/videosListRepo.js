@@ -1,10 +1,10 @@
 import { fetchFilmsData } from './videosListAPI'
 
-export async function getPopularFilms() {
-	let popularFilms = await fetchFilmsData({
-		page: 1,
-	})
-	return popularFilms
+export async function getPopularFilms () {
+  const popularFilms = await fetchFilmsData({
+    page: 1
+  })
+  return popularFilms
 }
 
 // use this for get random movies

@@ -1,5 +1,6 @@
 import { StyledButton, ImageIcon, Text } from './button.styled'
 import { theme } from '../../themes/colors'
+import React from 'react'
 
 export const Button = ({
 	background,

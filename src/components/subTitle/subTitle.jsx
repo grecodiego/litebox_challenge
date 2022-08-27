@@ -1,8 +1,9 @@
+import React, { Fragment } from 'react'
 import { StyledSubTitle, Text } from './subTitle.styled'
 
 export const SubTitle = ({ partOne, partTwo, size }) => {
 	return (
-		<>
+		<Fragment>
 			<StyledSubTitle>
 				<Text fontFamily={'Light'} size={size}>
 					{partOne}
@@ -12,6 +13,6 @@ export const SubTitle = ({ partOne, partTwo, size }) => {
 					{partTwo}
 				</Text>
 			</StyledSubTitle>
-		</>
+		</Fragment>
 	)
 }
