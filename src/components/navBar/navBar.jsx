@@ -1,6 +1,6 @@
 import {
 	ImageIcon,
-	ImageIconPlus,
+	IconPlus,
 	InvisibleContainerForDesktop,
 	NavContainer,
 	StyledLink,
@@ -11,9 +11,9 @@ import { MenuButton } from './components/menuButton/menuButton.jsx'
 import { useLocation } from 'react-router-dom'
 import { UserAvatar } from './components/userAvatar/userAvatar'
 import Bell from '../../assets/images/png/bell.png'
-import Plus from '../../assets/images/png/plus.png'
 import React, { useState } from 'react'
 import { Fragment } from 'react'
+import { CSSTransition } from 'react-transition-group'
 
 export function NavBar() {
 	const [isOpen, setIsOpen] = useState(false)
@@ -24,14 +24,19 @@ export function NavBar() {
 	}
 	return (
 		<Fragment>
-			<Menu closeMenu={closeMenu} />
+			<Menu closeMenu={closeMenu} isOpen={isOpen} />
 			<NavContainer>
 				<BrandTitle mobile={false} />
 				{location.pathname === '/add-film' ? null : (
-					<StyledLink to={'/add-film'}>
-						<ImageIconPlus src={Plus} />
-						AGREGÁR PELICULA
-					</StyledLink>
+					<CSSTransition timeout={300} classNames='transition' in={!isOpen}>
+						<StyledLink to={'/add-film'}>
+							<IconPlus>
+								<path d='M7 0V14' stroke='currentColor' />
+								<path d='M14 7L-5.96046e-08 7' stroke='currentColor' />
+							</IconPlus>
+							AGREGAR PELICULA
+						</StyledLink>
+					</CSSTransition>
 				)}
 				<InvisibleContainerForDesktop />
 				<MenuButton closeMenu={closeMenu} isOpen={isOpen} />

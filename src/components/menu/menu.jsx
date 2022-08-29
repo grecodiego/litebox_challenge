@@ -4,7 +4,7 @@ import { StyledMenu } from './menu.styled'
 import { useNavigate, useLocation } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 
-export const Menu = ({ closeMenu }) => {
+export const Menu = ({ closeMenu, isOpen }) => {
 	const location = useLocation()
 	const navigate = useNavigate()
 	const [optionChoosen, setOptionChoosen] = useState('/')
@@ -19,7 +19,7 @@ export const Menu = ({ closeMenu }) => {
 	}
 
 	return (
-		<StyledMenu>
+		<StyledMenu isOpen={isOpen}>
 			{menuOptions.map((option) => {
 				return (
 					<OptionContainer

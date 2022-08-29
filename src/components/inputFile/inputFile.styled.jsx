@@ -42,6 +42,7 @@ export const Text = styled.p`
 	font-weight: 400;
 	letter-spacing: 4px;
 	line-height: 19px;
+	padding-top: 3px;
 `
 
 export const StyledInput = styled.input`
