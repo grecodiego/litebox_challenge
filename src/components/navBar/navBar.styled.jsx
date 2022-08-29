@@ -39,8 +39,10 @@ export const ImageIcon = styled.img`
 	}
 `
 
-export const ImageIconPlus = styled.img`
-	display: flex;
+export const IconPlus = styled.svg`
+	width: 14px;
+	height: 14px;
+
 	margin: -2px 12px 0 0;
 `
 
@@ -62,8 +64,32 @@ export const StyledLink = styled(Link)`
 	font-weight: 700;
 	letter-spacing: 4px;
 	line-height: 18px;
+	height: auto;
 
 	@media (min-width: 992px) {
 		display: flex;
+		&.transition-enter {
+			transition: all 1000ms ease-in;
+			color: transparent;
+		}
+
+		// enter to
+		&.transition-enter-done {
+			color: ${({ theme }) => theme.secondaryColor};
+			transition: all 1000ms ease-in;
+		}
+
+		// exit from
+		&.transition-exit {
+			transition: all 1000ms ease-in;
+			color: ${({ theme }) => theme.secondaryColor};
+		}
+
+		// exit to
+		&.transition-exit-done {
+			transition: all 1000ms ease-in;
+
+			color: transparent;
+		}
 	}
 `

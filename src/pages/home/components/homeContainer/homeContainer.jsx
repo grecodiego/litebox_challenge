@@ -11,6 +11,7 @@ import { useInView } from 'react-intersection-observer'
 import { VideosList } from '../../../../components/videosList/videosList'
 import playTriangle from '../../../../assets/images/png/playTriangle.png'
 import plus from '../../../../assets/images/png/plus.png'
+import React from 'react'
 
 export const HomeContainer = ({ filmData }) => {
 	const { ref, inView } = useInView({ threshold: 0, triggerOnce: true })

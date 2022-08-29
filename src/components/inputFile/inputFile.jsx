@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { Button } from '../../components/buttons/button'
 import { theme } from '../../themes/colors'
 import { useDropzone } from 'react-dropzone'
@@ -18,7 +17,7 @@ import {
 	TextProgressBar,
 } from './inputFile.styled'
 
-export function InputFile({ isImageFetched, setIsImageFetched }) {
+export function InputFile({ setIsImageFetched }) {
 	const [filmNameInputValue, setFilmNameInputValue] = useState('')
 	const [image, setImage] = useState(null)
 	const [imageLoaded, setImageLoaded] = useState(false)
@@ -109,7 +108,63 @@ export function InputFile({ isImageFetched, setIsImageFetched }) {
 	})
 
 	return isDragActive ? (
-		<p>error</p>
+		<StyledInputFileContainer>
+			{imageOnDrop === false ? (
+				<StyledInputFile {...getRootProps()}>
+					<input {...getInputProps()} />
+					<ImageIcon src={Clip} />
+					<Text>AGREGÁ UN ARCHIVO</Text>
+					{isDragAccept && <Text>DROP DE MOVIE!</Text>}
+					{isDragReject && <Text>THE FIL EXTENSION IS NOT ACCEPTED.</Text>}
+				</StyledInputFile>
+			) : (
+				<ProgressBarContainer>
+					<TextProgressBar>
+						{uploadError === false
+							? percentage === 100
+								? '100% cargado'
+								: `CARGANDO ${percentage}%`
+							: '¡ERROR! no se pudo cargar la película'}
+					</TextProgressBar>
+					<ProgressBarRail>
+						{uploadError === false ? (
+							percentage === 100 ? (
+								<ProgressBar percentage={100} />
+							) : (
+								<ProgressBar percentage={percentage} />
+							)
+						) : (
+							<ProgressBarError />
+						)}
+					</ProgressBarRail>
+					<ButtonProgressBar imageLoaded={imageLoaded}>
+						{uploadError === false
+							? percentage === 100
+								? '¡LISTO!'
+								: `CANCELAR`
+							: 'REINTENTAR'}
+					</ButtonProgressBar>
+				</ProgressBarContainer>
+			)}
+			<InputFilmName
+				border={true}
+				id={'filmNameInput'}
+				name={'filmNameInput'}
+				onChange={(e) => setFilmNameInputValue(e.target.value)}
+				placeholder={'TITULO'}
+				type={'text'}
+			/>
+
+			<Button
+				background={theme.secondaryColor}
+				disabled={
+					imageLoaded === true && filmNameInputValue !== '' ? false : true
+				}
+				onClick={handleFetchImage}
+				text={'SUBIR PELiCULA'}
+				textColor={theme.backgroundColor}
+			/>
+		</StyledInputFileContainer>
 	) : (
 		<StyledInputFileContainer>
 			{imageOnDrop === false ? (

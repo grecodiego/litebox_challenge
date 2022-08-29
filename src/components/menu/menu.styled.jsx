@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledMenu = styled.div`
-	position: fixed;
+	position: absolute;
 	left: -110%;
 	z-index: 20;
 	display: flex;

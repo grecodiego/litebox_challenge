@@ -12,7 +12,8 @@ import {
 	FilmTitleClicked,
 	MiniPlayCircle,
 } from './filmBox.styled'
-import { useState } from 'react'
+import React, { useState } from 'react'
+
 import Star from '../../../../assets/images/svg/star.svg'
 export const FilmBox = ({ src, title, index, voteAverage, date }) => {
 	const [isClicked, setIsClicked] = useState(false)
