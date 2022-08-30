@@ -2,11 +2,10 @@ import styled from 'styled-components'
 
 export const StyledInputFileContainer = styled.div`
 	display: flex;
-	height: 40%;
+	min-height: 40%;
 	margin-bottom: 24px;
 	flex-direction: column;
 	justify-content: space-between;
-
 	@media (min-width: 992px) {
 		align-items: center;
 		width: 100%;

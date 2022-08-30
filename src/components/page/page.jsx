@@ -1,11 +1,12 @@
 import { NavBar } from '../navBar/navBar'
-import React, { Fragment } from 'react'
+import React from 'react'
+import { StyledPage } from './page.styled'
 
 export const Page = ({ children }) => {
 	return (
-		<Fragment>
+		<StyledPage>
 			<NavBar />
 			<main>{children}</main>
-		</Fragment>
+		</StyledPage>
 	)
 }

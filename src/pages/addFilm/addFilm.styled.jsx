@@ -2,10 +2,11 @@ import styled from 'styled-components'
 
 export const StyledAddFilm = styled.div`
 	display: flex;
+	flex-wrap: wrap;
 	height: 100vh;
+	min-height: 600px;
 	flex-direction: column;
 	justify-content: center;
-
 	animation: apearText 5s;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-out;
