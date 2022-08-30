@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import { Fragment, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { InputFile } from '../../components/inputFile/inputFile'
 import { Page } from '../../components/page/page'

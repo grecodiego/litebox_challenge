@@ -11,7 +11,7 @@ import { MenuButton } from './components/menuButton/menuButton.jsx'
 import { useLocation } from 'react-router-dom'
 import { UserAvatar } from './components/userAvatar/userAvatar'
 import Bell from '../../assets/images/png/bell.png'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Fragment } from 'react'
 import { CSSTransition } from 'react-transition-group'
 

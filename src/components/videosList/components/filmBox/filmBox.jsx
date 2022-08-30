@@ -12,7 +12,7 @@ import {
 	FilmTitleClicked,
 	MiniPlayCircle,
 } from './filmBox.styled'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import Star from '../../../../assets/images/svg/star.svg'
 export const FilmBox = ({ src, title, index, voteAverage, date }) => {
@@ -49,8 +49,7 @@ export const FilmBox = ({ src, title, index, voteAverage, date }) => {
 							height={24}
 							width={24}
 							viewBox='0 0 40 40'
-							fill='none'
-						>
+							fill='none'>
 							<circle cx='20' cy='20' r='19.5' stroke='white' />
 							<path
 								fillRule='evenodd'

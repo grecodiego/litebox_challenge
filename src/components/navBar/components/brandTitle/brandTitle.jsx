@@ -1,4 +1,3 @@
-import React from 'react'
 import { Text, TitleContainer } from './brandTitle.styled'
 
 export const BrandTitle = ({ mobile }) => {

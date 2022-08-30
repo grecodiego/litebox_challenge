@@ -10,7 +10,7 @@ import {
 } from './filter.styled'
 import { SubTitle } from '../../../subTitle/subTitle'
 import downArrow from '../../../../assets/images/png/downArrow.png'
-import React, { useState, Fragment } from 'react'
+import { useState, Fragment } from 'react'
 import checked from '../../../../assets/images/png/checked.png'
 
 export const Filter = ({
@@ -44,19 +44,16 @@ export const Filter = ({
 					return (
 						<OptionContainer
 							key={option.id}
-							onClick={() => handleChoice(option)}
-						>
+							onClick={() => handleChoice(option)}>
 							<Option
 								option={option}
-								dropDownOptionChoosen={dropDownOptionChoosen}
-							>
+								dropDownOptionChoosen={dropDownOptionChoosen}>
 								{option.title}
 							</Option>
 							<Checked
 								option={option}
 								dropDownOptionChoosen={dropDownOptionChoosen}
-								src={checked}
-							></Checked>
+								src={checked}></Checked>
 						</OptionContainer>
 					)
 				})}

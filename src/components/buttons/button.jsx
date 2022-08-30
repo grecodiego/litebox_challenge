@@ -1,6 +1,5 @@
 import { StyledButton, ImageIcon, Text } from './button.styled'
 import { theme } from '../../themes/colors'
-import React from 'react'
 
 export const Button = ({
 	background,
@@ -20,8 +19,7 @@ export const Button = ({
 			image={image}
 			onClick={onClick}
 			textColor={textColor || theme.secondaryColor}
-			effect={effect}
-		>
+			effect={effect}>
 			{image ? <ImageIcon src={image} /> : null}
 			<Text effect={effect}>{text}</Text>
 		</StyledButton>

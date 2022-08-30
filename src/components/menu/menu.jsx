@@ -2,7 +2,7 @@ import { menuOptions } from './menuOptions'
 import { OptionContainer } from './components/optionContainer/optionContainer'
 import { StyledMenu } from './menu.styled'
 import { useNavigate, useLocation } from 'react-router-dom'
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 export const Menu = ({ closeMenu, isOpen }) => {
 	const location = useLocation()

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import { Fragment } from 'react'
 import { StyledSubTitle, Text } from './subTitle.styled'
 
 export const SubTitle = ({ partOne, partTwo, size }) => {

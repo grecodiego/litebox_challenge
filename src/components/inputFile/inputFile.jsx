@@ -2,7 +2,7 @@ import { Button } from '../../components/buttons/button'
 import { theme } from '../../themes/colors'
 import { useDropzone } from 'react-dropzone'
 import Clip from '../../assets/images/png/clip.png'
-import React, { useCallback, useState, useEffect } from 'react'
+import { useCallback, useState, useEffect } from 'react'
 import {
 	ButtonProgressBar,
 	ImageIcon,

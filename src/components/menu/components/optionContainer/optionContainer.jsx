@@ -1,5 +1,4 @@
 import { StyledOptionContainer, Option } from './optionContainer.styled'
-import React from 'react'
 
 export const OptionContainer = ({
 	handleClickOption,
@@ -11,8 +10,7 @@ export const OptionContainer = ({
 			<Option
 				onClick={() => handleClickOption(option)}
 				option={option}
-				optionChoosen={optionChoosen}
-			>
+				optionChoosen={optionChoosen}>
 				{option.title}
 			</Option>
 		</StyledOptionContainer>
