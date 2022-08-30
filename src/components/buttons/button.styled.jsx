@@ -8,6 +8,7 @@ export const StyledButton = styled.button`
 	color: ${({ textColor }) => textColor};
 	display: flex;
 	height: 56px;
+	min-height: 56px;
 	justify-content: center;
 	margin: 0 17% 0 17%;
 	opacity: ${({ disabled }) => (disabled === false ? '100%' : '50%')};

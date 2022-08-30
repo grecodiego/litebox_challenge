@@ -21,9 +21,6 @@ body {
 	overscroll-behavior: none;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-	@media (min-width: 992px) {
-		overflow-y: hidden;
-	}
 }
 
 @font-face {
