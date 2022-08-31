@@ -3,7 +3,7 @@ import { CenterDiv, LoadingText } from './home.styled'
 import { getFilmData } from '../../repository/mainFilms/mainFilmsRepo'
 import { HomeContainer } from './components/homeContainer/homeContainer'
 import { Page } from '../../components/page/page'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const Home = () => {
 	const [filmData, setFilmData] = useState(null)

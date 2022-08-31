@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import {
-	/* getAleatoryPopularFilms */ getPopularFilms,
+	getAleatoryPopularFilms /*  getPopularFilms, */,
 } from '../../repository/videosListAPI/videosListRepo'
 import { FilmBox } from './components/filmBox/filmBox'
 import {
@@ -22,7 +22,7 @@ export const VideosList = () => {
 		title: 'POPULARES',
 	})
 	useEffect(() => {
-		getPopularFilms().then((res) => setFilmsData(res))
+		getAleatoryPopularFilms().then((res) => setFilmsData(res))
 
 		// try this to get random movies (change the function on repository)
 		//	getAleatoryPopularFilms().then((res) => setFilmsData(res))

@@ -1,5 +1,4 @@
 import { BottomLine, MidLine, StyledMenu, TopLine } from './menuButton.styled'
-import React from 'react'
 import { Fragment } from 'react'
 
 export const MenuButton = ({ closeMenu, isOpen }) => {
